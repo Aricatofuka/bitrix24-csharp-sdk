@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Bitrix24RestApiClient.Api;
-using Bitrix24RestApiClient.Core.Client;
-using Bitrix24RestApiClient.Core.Models.Response.FieldsResponse;
-using Bitrix24RestApiClient.Api.Crm.CrmDeal.Contact.Items.Models;
-using Bitrix24RestApiClient.Test.Utilities;
-using Bitrix24RestApiClient.Core.Models.Response.BatchResponse;
+using BXRest.Api;
+using BXRest.Core.Client;
+using BXRest.Core.Models.Response.FieldsResponse;
+using BXRest.Api.Crm.CrmDeal.Contact.Items.Models;
+using BXRest.Test.Utilities;
+using BXRest.Core.Models.Response.BatchResponse;
 
-namespace Bitrix24RestApiClient.Test.Tests.IntegrationTests
+namespace BXRest.Test.Tests.IntegrationTests
 {
     public class DealContactTests: AbstractTest
     {

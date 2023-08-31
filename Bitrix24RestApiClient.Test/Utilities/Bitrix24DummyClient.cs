@@ -1,9 +1,9 @@
 ﻿using Newtonsoft.Json;
 using System.Threading.Tasks;
-using Bitrix24RestApiClient.Core.Client;
-using Bitrix24RestApiClient.Core.Models.Enums;
+using BXRest.Core.Client;
+using BXRest.Core.Models.Enums;
 
-namespace Bitrix24RestApiClient.Test.Utilities
+namespace BXRest.Test.Utilities
 {
     public class Bitrix24DummyClient : IBitrix24Client
     {

@@ -1,15 +1,15 @@
-﻿using Bitrix24RestApiClient.Api.Crm.Invoices.OldInvoices.Models;
+﻿using BXRest.Api.Crm.Invoices.OldInvoices.Models;
 using Xunit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Bitrix24RestApiClient.Api.Crm.Invoices.OldInvoices.Enums;
-using Bitrix24RestApiClient.Core.Models.Response.FieldsResponse;
-using Bitrix24RestApiClient.Core.Models.Response;
-using Bitrix24RestApiClient.Test.Utilities;
+using BXRest.Api.Crm.Invoices.OldInvoices.Enums;
+using BXRest.Core.Models.Response.FieldsResponse;
+using BXRest.Core.Models.Response;
+using BXRest.Test.Utilities;
 
-namespace Bitrix24RestApiClient.Test.Tests.IntegrationTests
+namespace BXRest.Test.Tests.IntegrationTests
 {
     public class OldIncvoicesTests : AbstractTest
     {

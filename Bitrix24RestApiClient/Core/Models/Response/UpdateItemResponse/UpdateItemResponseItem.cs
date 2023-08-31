@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Bitrix24RestApiClient.Core.Models.Response.AddItemResponse
+namespace BXRest.Core.Models.Response.AddItemResponse
 {
     public class UpdateItemResponseItem<TEntity>
     {

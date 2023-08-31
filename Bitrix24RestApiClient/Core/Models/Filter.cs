@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Bitrix24RestApiClient.Core.Models
+namespace BXRest.Core.Models
 {
     public class Filter {
         public string Name { get; set; }

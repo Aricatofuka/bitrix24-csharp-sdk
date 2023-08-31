@@ -3,13 +3,13 @@ using System.IO;
 using Humanizer;
 using System.Linq;
 using System.Threading.Tasks;
-using Bitrix24RestApiClient.Api;
+using BXRest.Api;
 using System.Collections.Generic;
 using Bitrix24RestApiTools.Models;
-using Bitrix24RestApiClient.Core.Client;
-using Bitrix24RestApiClient.Core.Models.Enums;
-using Bitrix24RestApiClient.Core.Models.Response.FieldsResponse;
-using Bitrix24RestApiClient.Core.Models.Response.SmartProcessResponse;
+using BXRest.Core.Client;
+using BXRest.Core.Models.Enums;
+using BXRest.Core.Models.Response.FieldsResponse;
+using BXRest.Core.Models.Response.SmartProcessResponse;
 
 namespace Bitrix24RestApiTools
 {

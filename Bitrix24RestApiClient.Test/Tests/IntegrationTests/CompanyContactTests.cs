@@ -1,15 +1,15 @@
 ﻿using Xunit;
 using System.Linq;
 using System.Threading.Tasks;
-using Bitrix24RestApiClient.Api;
+using BXRest.Api;
 using System.Collections.Generic;
-using Bitrix24RestApiClient.Core.Client;
-using Bitrix24RestApiClient.Test.Utilities;
-using Bitrix24RestApiClient.Core.Models.Response.BatchResponse;
-using Bitrix24RestApiClient.Core.Models.Response.FieldsResponse;
-using Bitrix24RestApiClient.Api.Crm.CrmDeal.Contact.Items.Models;
+using BXRest.Core.Client;
+using BXRest.Test.Utilities;
+using BXRest.Core.Models.Response.BatchResponse;
+using BXRest.Core.Models.Response.FieldsResponse;
+using BXRest.Api.Crm.CrmDeal.Contact.Items.Models;
 
-namespace Bitrix24RestApiClient.Test.Tests.IntegrationTests
+namespace BXRest.Test.Tests.IntegrationTests
 {
     public class CompanyContactTests: AbstractTest
     {

@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 
-namespace Bitrix24RestApiClient.Core.Models.Response.ListItemsResponse
+namespace BXRest.Core.Models.Response.ListItemsResponse
 {
     public class ListItemsItemsResponse<TEntity>
     {

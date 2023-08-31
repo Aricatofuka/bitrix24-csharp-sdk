@@ -2,15 +2,15 @@
 using System;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
-using Bitrix24RestApiClient.Api;
-using Bitrix24RestApiClient.Core.Client;
-using Bitrix24RestApiClient.Core.Models;
-using Bitrix24RestApiClient.Test.Utilities;
-using Bitrix24RestApiClient.Core.Models.Enums;
-using Bitrix24RestApiClient.Api.Crm.CrmDeal.Models;
-using Bitrix24RestApiClient.Core.Models.Response.FieldsResponse;
+using BXRest.Api;
+using BXRest.Core.Client;
+using BXRest.Core.Models;
+using BXRest.Test.Utilities;
+using BXRest.Core.Models.Enums;
+using BXRest.Api.Crm.CrmDeal.Models;
+using BXRest.Core.Models.Response.FieldsResponse;
 
-namespace Bitrix24RestApiClient.Test.Tests.RequestBodyTests
+namespace BXRest.Test.Tests.RequestBodyTests
 {
     public class DealTests:IDisposable
     {

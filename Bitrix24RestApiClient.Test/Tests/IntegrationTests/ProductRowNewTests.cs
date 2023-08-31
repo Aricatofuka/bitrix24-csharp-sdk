@@ -3,14 +3,14 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Collections.Generic;
-using Bitrix24RestApiClient.Test.Utilities;
-using Bitrix24RestApiClient.Core.Models.Enums;
-using Bitrix24RestApiClient.Core.Models.Response;
-using Bitrix24RestApiClient.Api.Crm.CrmDeal.Models;
-using Bitrix24RestApiClient.Core.Models.Response.FieldsResponse;
-using Bitrix24RestApiClient.Api.Crm.Item.CrmProductRow.Models;
+using BXRest.Test.Utilities;
+using BXRest.Core.Models.Enums;
+using BXRest.Core.Models.Response;
+using BXRest.Api.Crm.CrmDeal.Models;
+using BXRest.Core.Models.Response.FieldsResponse;
+using BXRest.Api.Crm.Item.CrmProductRow.Models;
 
-namespace Bitrix24RestApiClient.Test.Tests.IntegrationTests
+namespace BXRest.Test.Tests.IntegrationTests
 {
     /// <summary>
     /// Тесты в этом разделе сильно зависят от кастомных смарт процессов, так что просто так у вас их прогнать не получится, пока не создадите смарт процесс и не пропишете в тестах ай ди шку смарт процесса

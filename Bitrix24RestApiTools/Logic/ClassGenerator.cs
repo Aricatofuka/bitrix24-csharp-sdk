@@ -3,7 +3,7 @@ using Humanizer;
 using System.Linq;
 using System.Text;
 using System.Collections.Generic;
-using Bitrix24RestApiClient.Core.Models.Response.FieldsResponse;
+using BXRest.Core.Models.Response.FieldsResponse;
 
 namespace Bitrix24RestApiTools
 {
@@ -13,8 +13,8 @@ namespace Bitrix24RestApiTools
         {
             var sb = new StringBuilder();
             sb.AppendLine($"#nullable enable");
-            sb.AppendLine($"using Bitrix24RestApiClient.Models.Core.Attributes;");
-            sb.AppendLine($"using Bitrix24RestApiClient.Models.Core.Enums;");
+            sb.AppendLine($"using BXRest.Models.Core.Attributes;");
+            sb.AppendLine($"using BXRest.Models.Core.Enums;");
             sb.AppendLine($"using Newtonsoft.Json;");
             sb.AppendLine($"");
             sb.AppendLine($"namespace G_{className}");

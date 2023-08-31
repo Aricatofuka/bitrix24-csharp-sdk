@@ -1,4 +1,4 @@
-﻿namespace Bitrix24RestApiClient.Core.Models.Response.FieldsResponse
+﻿namespace BXRest.Core.Models.Response.FieldsResponse
 {
     public class StringFieldSettings
 	{

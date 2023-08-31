@@ -1,5 +1,5 @@
 ﻿
-namespace Bitrix24RestApiClient.Test.Utilities
+namespace BXRest.Test.Utilities
 {
     internal class TestObject<T1, T2>
     {

@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
-using Bitrix24RestApiClient.Core.Models.CrmAbstractEntity;
+using BXRest.Core.Models.CrmAbstractEntity;
 
-namespace Bitrix24RestApiClient.Test.Models
+namespace BXRest.Test.Models
 {
     public class TestDeal
     {

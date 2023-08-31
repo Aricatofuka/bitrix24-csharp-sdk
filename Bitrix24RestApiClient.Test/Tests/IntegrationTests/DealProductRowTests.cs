@@ -1,14 +1,14 @@
-﻿using Bitrix24RestApiClient.Api.Crm.Invoices.OldInvoices.Models;
+﻿using BXRest.Api.Crm.Invoices.OldInvoices.Models;
 using Xunit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Bitrix24RestApiClient.Core.Models.Response.BatchResponse;
-using Bitrix24RestApiClient.Api.Crm.CrmDeal.ProductRows.Models;
-using Bitrix24RestApiClient.Test.Utilities;
+using BXRest.Core.Models.Response.BatchResponse;
+using BXRest.Api.Crm.CrmDeal.ProductRows.Models;
+using BXRest.Test.Utilities;
 
-namespace Bitrix24RestApiClient.Test.Tests.IntegrationTests
+namespace BXRest.Test.Tests.IntegrationTests
 {
     public class DealProductRowTests : AbstractTest
     {

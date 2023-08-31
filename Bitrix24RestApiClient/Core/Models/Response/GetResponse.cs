@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
-using Bitrix24RestApiClient.Core.Models.Response.Common;
+using BXRest.Core.Models.Response.Common;
 
-namespace Bitrix24RestApiClient.Core.Models.Response
+namespace BXRest.Core.Models.Response
 {
     public class GetResponse<TEntity>
     {
@@ -12,7 +12,7 @@ namespace Bitrix24RestApiClient.Core.Models.Response
         public int? Next { get; set; }
 
         [JsonProperty("total")]
-        public int Total { get; set; }
+        public int? Total { get; set; }
 
         [JsonProperty("time")]
         public Time Time { get; set; }

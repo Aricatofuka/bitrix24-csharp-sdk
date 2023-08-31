@@ -2,13 +2,13 @@
 using System.Linq;
 using Xunit;
 using System.Threading.Tasks;
-using Bitrix24RestApiClient.Core.Models.Enums;
-using Bitrix24RestApiClient.Core.Models.Response;
-using Bitrix24RestApiClient.Api.Crm.Requisite.Models;
-using Bitrix24RestApiClient.Core.Models.Response.FieldsResponse;
-using Bitrix24RestApiClient.Test.Utilities;
+using BXRest.Core.Models.Enums;
+using BXRest.Core.Models.Response;
+using BXRest.Api.Crm.Requisite.Models;
+using BXRest.Core.Models.Response.FieldsResponse;
+using BXRest.Test.Utilities;
 
-namespace Bitrix24RestApiClient.Test.Tests.IntegrationTests
+namespace BXRest.Test.Tests.IntegrationTests
 {
     public class RequisitesTests : AbstractTest
     {

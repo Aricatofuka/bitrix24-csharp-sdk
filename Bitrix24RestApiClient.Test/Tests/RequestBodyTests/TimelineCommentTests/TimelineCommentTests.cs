@@ -2,12 +2,12 @@
 using System;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
-using Bitrix24RestApiClient.Api;
-using Bitrix24RestApiClient.Core.Models;
-using Bitrix24RestApiClient.Test.Utilities;
-using Bitrix24RestApiClient.Api.Crm.Timeline.Comment.Models;
+using BXRest.Api;
+using BXRest.Core.Models;
+using BXRest.Test.Utilities;
+using BXRest.Api.Crm.Timeline.Comment.Models;
 
-namespace Bitrix24RestApiClient.Test.Tests.RequestBodyTests
+namespace BXRest.Test.Tests.RequestBodyTests
 {
     public class TimelineCommentTests : IDisposable
     {

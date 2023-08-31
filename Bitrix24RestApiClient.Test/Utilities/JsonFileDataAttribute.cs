@@ -5,7 +5,7 @@ using System.Reflection;
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 
-namespace Bitrix24RestApiClient.Test.Utilities
+namespace BXRest.Test.Utilities
 {
     public class JsonFileDataAttribute : DataAttribute
     {

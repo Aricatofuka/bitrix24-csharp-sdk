@@ -1,8 +1,8 @@
 ﻿using Xunit;
 using System.Threading.Tasks;
-using Bitrix24RestApiClient.Test.Utilities;
+using BXRest.Test.Utilities;
 
-namespace Bitrix24RestApiClient.Test.Tests.IntegrationTests
+namespace BXRest.Test.Tests.IntegrationTests
 {
     public class StageHistoriesTests : AbstractTest
     {

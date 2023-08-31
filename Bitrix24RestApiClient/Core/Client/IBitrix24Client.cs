@@ -1,10 +1,10 @@
 ﻿using System.Threading.Tasks;
-using Bitrix24RestApiClient.Core.Models.Enums;
+using BXRest.Core.Models.Enums;
 
-namespace Bitrix24RestApiClient.Core.Client
+namespace BXRest.Core.Client
 {
     public interface IBitrix24Client
     {
-        Task<TResponse> SendPostRequest<TArgs, TResponse>(EntryPointPrefix entityTypePrefix, EntityMethod method, TArgs args) where TResponse : class;
+        Task<TResponse> SendPostRequest<TArgs, TResponse>(string metod, TArgs args) where TResponse : class;
     }
 }

@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using System;
 
-namespace Bitrix24RestApiClient.Test.Utilities
+namespace BXRest.Test.Utilities
 {
     public class DummyLogger<T> : ILogger<T>
     {

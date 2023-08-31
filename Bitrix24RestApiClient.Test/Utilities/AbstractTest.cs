@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Bitrix24RestApiClient.Api;
+using BXRest.Api;
 using System.Collections.Generic;
-using Bitrix24RestApiClient.Core.Client;
-using Bitrix24RestApiClient.Test.Utilities;
+using BXRest.Core.Client;
+using BXRest.Test.Utilities;
 
-namespace Bitrix24RestApiClient.Test.Utilities
+namespace BXRest.Test.Utilities
 {
     public abstract class AbstractTest : IDisposable
     {

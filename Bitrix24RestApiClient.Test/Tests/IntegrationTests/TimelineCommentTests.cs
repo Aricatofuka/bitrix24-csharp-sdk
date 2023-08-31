@@ -2,13 +2,13 @@
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Bitrix24RestApiClient.Api.Crm.Timeline.Comment.Models;
-using Bitrix24RestApiClient.Api.Crm.Timeline.Models;
-using Bitrix24RestApiClient.Core.Models.Response.FieldsResponse;
-using Bitrix24RestApiClient.Core.Models.Response;
-using Bitrix24RestApiClient.Test.Utilities;
+using BXRest.Api.Crm.Timeline.Comment.Models;
+using BXRest.Api.Crm.Timeline.Models;
+using BXRest.Core.Models.Response.FieldsResponse;
+using BXRest.Core.Models.Response;
+using BXRest.Test.Utilities;
 
-namespace Bitrix24RestApiClient.Test.Tests.IntegrationTests
+namespace BXRest.Test.Tests.IntegrationTests
 {
     public class TimelineCommentTests : AbstractTest
     {

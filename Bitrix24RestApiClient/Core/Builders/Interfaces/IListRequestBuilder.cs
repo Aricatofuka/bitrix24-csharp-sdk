@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq.Expressions;
-using Bitrix24RestApiClient.Core.Models;
+using BXRest.Core.Models;
 
-namespace Bitrix24RestApiClient.Core.Builders.Interfaces
+namespace BXRest.Core.Builders.Interfaces
 {
     public interface IListRequestBuilder<TEntity>
     {

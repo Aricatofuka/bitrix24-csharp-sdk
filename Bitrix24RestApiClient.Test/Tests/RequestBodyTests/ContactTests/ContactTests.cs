@@ -2,13 +2,13 @@
 using System;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
-using Bitrix24RestApiClient.Api;
-using Bitrix24RestApiClient.Core.Models;
-using Bitrix24RestApiClient.Test.Utilities;
-using Bitrix24RestApiClient.Core.Models.Enums;
-using Bitrix24RestApiClient.Api.Crm.CrmContact.Models;
+using BXRest.Api;
+using BXRest.Core.Models;
+using BXRest.Test.Utilities;
+using BXRest.Core.Models.Enums;
+using BXRest.Api.Crm.CrmContact.Models;
 
-namespace Bitrix24RestApiClient.Test.Tests.RequestBodyTests
+namespace BXRest.Test.Tests.RequestBodyTests
 {
     public class ContactTests : IDisposable
     {

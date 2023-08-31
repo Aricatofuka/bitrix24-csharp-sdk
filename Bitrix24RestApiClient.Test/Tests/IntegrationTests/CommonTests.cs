@@ -2,10 +2,10 @@
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Bitrix24RestApiClient.Test.Utilities;
-using Bitrix24RestApiClient.Api.Crm.CrmDeal.Models;
+using BXRest.Test.Utilities;
+using BXRest.Api.Crm.CrmDeal.Models;
 
-namespace Bitrix24RestApiClient.Test.Tests.IntegrationTests
+namespace BXRest.Test.Tests.IntegrationTests
 {
     public class CommonTests : AbstractTest
     {

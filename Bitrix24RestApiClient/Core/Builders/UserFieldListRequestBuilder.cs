@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Bitrix24RestApiClient.Core.Builders;
+using BXRest.Core.Builders;
 
-namespace Bitrix24RestApiClient.Core.Builders
+namespace BXRest.Core.Builders
 {
     public class UserFieldListRequestBuilder
     {

@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
-using Bitrix24RestApiClient.Core.Models.Response.Common;
+using BXRest.Core.Models.Response.Common;
 
-namespace Bitrix24RestApiClient.Core.Models.Response
+namespace BXRest.Core.Models.Response
 {
     public class DeleteResponse
     {

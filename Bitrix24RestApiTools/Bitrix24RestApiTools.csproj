@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Bitrix24RestApiClient\Bitrix24RestApiClient.csproj" />
+    <ProjectReference Include="..\BXRest\BXRest.csproj" />
   </ItemGroup>
 
 </Project>

@@ -2,12 +2,12 @@
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Bitrix24RestApiClient.Core.Models.Response.FieldsResponse;
-using Bitrix24RestApiClient.Core.Models.Response;
-using Bitrix24RestApiClient.Api.Crm.CrmContact.Models;
-using Bitrix24RestApiClient.Test.Utilities;
+using BXRest.Core.Models.Response.FieldsResponse;
+using BXRest.Core.Models.Response;
+using BXRest.Api.Crm.CrmContact.Models;
+using BXRest.Test.Utilities;
 
-namespace Bitrix24RestApiClient.Test.Tests.IntegrationTests
+namespace BXRest.Test.Tests.IntegrationTests
 {
     public class ContactTests : AbstractTest
     {

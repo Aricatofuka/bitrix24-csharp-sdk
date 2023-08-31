@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Bitrix24RestApiClient.Test.Utilities
+namespace BXRest.Test.Utilities
 {
     public static class Constants
     {

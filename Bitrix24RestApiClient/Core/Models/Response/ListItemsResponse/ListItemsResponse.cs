@@ -1,8 +1,8 @@
-﻿using Bitrix24RestApiClient.Core.Models.Response.ListItemsResponse;
+﻿using BXRest.Core.Models.Response.ListItemsResponse;
 using Newtonsoft.Json;
-using Bitrix24RestApiClient.Core.Models.Response.Common;
+using BXRest.Core.Models.Response.Common;
 
-namespace Bitrix24RestApiClient.Core.Models.Response.ListItemsResponse
+namespace BXRest.Core.Models.Response.ListItemsResponse
 {
     public class ListItemsResponse<TEntity>
     {

@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
-using Bitrix24RestApiClient.Core.Models.Response.BatchResponse;
-using Bitrix24RestApiClient.Core.Models.Response.Common;
+using BXRest.Core.Models.Response.BatchResponse;
+using BXRest.Core.Models.Response.Common;
 
-namespace Bitrix24RestApiClient.Core.Models.Response.BatchResponse
+namespace BXRest.Core.Models.Response.BatchResponse
 {
     public class BatchResponse<TCmdResultItem>
     {

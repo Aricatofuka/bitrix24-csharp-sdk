@@ -1,4 +1,4 @@
-﻿namespace Bitrix24RestApiClient.Core.Models.Response.BatchResponse
+﻿namespace BXRest.Core.Models.Response.BatchResponse
 {
     public class ByIdBatchResponseItem<TResult>
     {

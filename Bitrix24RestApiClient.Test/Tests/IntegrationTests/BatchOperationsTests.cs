@@ -2,17 +2,17 @@
 using Newtonsoft.Json;
 using System.Threading.Tasks;
 using System.Collections.Generic;
-using Bitrix24RestApiClient.Core.Models;
-using Bitrix24RestApiClient.Test.Models;
-using Bitrix24RestApiClient.Test.Utilities;
-using Bitrix24RestApiClient.Core.Models.Enums;
-using Bitrix24RestApiClient.Api.Crm.CrmDeal.Models;
-using Bitrix24RestApiClient.Api.Crm.CrmProduct.Models;
-using Bitrix24RestApiClient.Test.Tests.IntegrationTests;
-using Bitrix24RestApiClient.Api.Crm.CrmDeal.ProductRows.Models;
-using Bitrix24RestApiClient.Api.Crm.CrmStageHistory.Deal.Models;
+using BXRest.Core.Models;
+using BXRest.Test.Models;
+using BXRest.Test.Utilities;
+using BXRest.Core.Models.Enums;
+using BXRest.Api.Crm.CrmDeal.Models;
+using BXRest.Api.Crm.CrmProduct.Models;
+using BXRest.Test.Tests.IntegrationTests;
+using BXRest.Api.Crm.CrmDeal.ProductRows.Models;
+using BXRest.Api.Crm.CrmStageHistory.Deal.Models;
 
-namespace Bitrix24RestApiClient.Test.Tests.IntegrationTests
+namespace BXRest.Test.Tests.IntegrationTests
 {
     public class BatchOperationsTests : AbstractTest
     {

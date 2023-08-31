@@ -2,11 +2,11 @@
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Bitrix24RestApiClient.Core.Models.Enums;
-using Bitrix24RestApiClient.Api.Crm.CrmDeal.Models;
-using Bitrix24RestApiClient.Test.Utilities;
+using BXRest.Core.Models.Enums;
+using BXRest.Api.Crm.CrmDeal.Models;
+using BXRest.Test.Utilities;
 
-namespace Bitrix24RestApiClient.Test.Tests.IntegrationTests
+namespace BXRest.Test.Tests.IntegrationTests
 {
     public class SmartProcessesTests : AbstractTest
     {
