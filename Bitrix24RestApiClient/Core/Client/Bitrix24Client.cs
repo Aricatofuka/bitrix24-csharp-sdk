@@ -5,21 +5,36 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Microsoft.Extensions.Logging;
 using System.Text.RegularExpressions;
-using System.Diagnostics.CodeAnalysis;
 
 namespace BXRest.Core.Client
 {
+    /// <summary>
+    /// Класс для отправки подготовленных запросов
+    /// </summary>
     public class Bitrix24Client: IBitrix24Client
     {
         private string webhookUrl;
         private ILogger logger;
 
+        /// <summary>
+        /// init
+        /// </summary>
+        /// <param name="webhookUrl"></param>
+        /// <param name="logger"></param>
         public Bitrix24Client(string webhookUrl, ILogger logger)
         {
             this.webhookUrl = webhookUrl;
             this.logger = logger;
         }
 
+        /// <summary>
+        /// Основной метод для запросов
+        /// </summary>
+        /// <typeparam name="TArgs"></typeparam>
+        /// <typeparam name="TResponse"></typeparam>
+        /// <param name="metod"></param>
+        /// <param name="args"></param>
+        /// <returns></returns>
         public async Task<TResponse> SendPostRequest<TArgs,TResponse>(string metod, TArgs args) where TResponse : class
         {
             string responseBodyStr = null;
@@ -31,6 +46,7 @@ namespace BXRest.Core.Client
                        .AppendPathSegment(metod)
                        .PostJsonAsync(args);
 
+                logger.LogWarning($"Bitrix24 API request\r\n\tMethod: {metod}\r\n\tArgs: {JsonConvert.SerializeObject(args)}\r\n\tBody: {responseBodyStr}\r\n\t");
 
                 TResponse responseBody = await response.GetJsonAsync<TResponse>();
                 return responseBody;

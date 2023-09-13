@@ -1,7 +1,7 @@
-﻿using BXRest.Api.Models.Tasks.Task;
-using BXRest.Core.Client;
-using BXRest.Core.Models.Enums;
+﻿using BXRest.Core.Client;
+using BXRest.Core.Models;
 using BXRest.Core.Models.Response;
+using BXRest.Models.Tasks.Task;
 using System.Threading.Tasks;
 
 namespace BXRest.Api.TasksMetodts
@@ -24,9 +24,9 @@ namespace BXRest.Api.TasksMetodts
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
-        public async Task<GetResponse<iTask>> Add(iAdd param)
+        public async Task<iGetRespnse<iTask>> Add(iAdd param)
         {
-            return await client.SendPostRequest<iAdd, GetResponse<iTask>>(RestMedots.Tasks.Task.Add, param);
+            return await client.SendPostRequest<iAdd, iGetRespnse<iTask>>(RestMedots.Tasks.Task.Add, param);
         }
 
         /*
@@ -47,9 +47,9 @@ namespace BXRest.Api.TasksMetodts
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
-        public async Task<GetResponse<iGetResult>> Get(iGet param)
+        public async Task<iGetRespnse<iGetResult>> Get(iGet param)
         {
-            return await client.SendPostRequest<iGet, GetResponse<iGetResult>>(RestMedots.Tasks.Task.Get, param);
+            return await client.SendPostRequest<iGet, iGetRespnse<iGetResult>>(RestMedots.Tasks.Task.Get, param);
         }
         /*
         tasks.task.getFields Возвращает все доступные поля
@@ -62,9 +62,9 @@ namespace BXRest.Api.TasksMetodts
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
-        public async Task<GetResponse<iListResult>> List(iList param)
+        public async Task<iGetRespnse<iListResult>> List(iList param)
         {
-            return await client.SendPostRequest<iList, GetResponse<iListResult>>(RestMedots.Tasks.Task.List, param);
+            return await client.SendPostRequest<iList, iGetRespnse<iListResult>>(RestMedots.Tasks.Task.List, param);
         }
         /*
         tasks.task.list Возвращает массив задач, каждая из которых содержит массив полей

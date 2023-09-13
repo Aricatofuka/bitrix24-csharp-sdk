@@ -16,21 +16,14 @@
     <Description>Библиотека для работы с REST API битрикс24.
 
 Это версия пригодна к использованию в продакшене, но учитывайте, что первое время будут периодически появляться брэйкинг чеинджис. Если Вам понравилась моя идея по созданию библиотеки, но нашли ошибку или не нашли нужную Вам фичу, то напишите, пожалуйста, мне по почте timergalin@gmail.com или в вайбер по номеру +79222404311 и я внесу правки.</Description>
-    <PackageIcon>service-tool-icon.jpg</PackageIcon>
     <PackageIconUrl />
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Flurl" Version="3.0.2" />
     <PackageReference Include="Flurl.Http" Version="3.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="images\service-tool-icon.jpg">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
   </ItemGroup>
 
   <ItemGroup>

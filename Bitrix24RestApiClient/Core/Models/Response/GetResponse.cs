@@ -1,20 +1,12 @@
-﻿using Newtonsoft.Json;
-using BXRest.Core.Models.Response.Common;
+﻿using BXRest.Core.Models.Response.Common;
 
 namespace BXRest.Core.Models.Response
 {
-    public class GetResponse<TEntity>
+    public class iGetRespnse<T>
     {
-        [JsonProperty("result")]
-        public TEntity Result { get; set; }
-
-        [JsonProperty("next")]
-        public int? Next { get; set; }
-
-        [JsonProperty("total")]
-        public int? Total { get; set; }
-
-        [JsonProperty("time")]
-        public Time Time { get; set; }
+        public T result { get; set; }
+        public int? next { get; set; }
+        public int? total { get; set; }
+        public Time time { get; set; }
     }
 }

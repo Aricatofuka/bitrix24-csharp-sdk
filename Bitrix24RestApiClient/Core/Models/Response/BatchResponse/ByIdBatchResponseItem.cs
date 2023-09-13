@@ -1,8 +1,8 @@
 ﻿namespace BXRest.Core.Models.Response.BatchResponse
 {
-    public class ByIdBatchResponseItem<TResult>
+    public class ByIdBatchResponseItem<R>
     {
-        public TResult Result { get; set; }
-        public int Id { get; set; }
+        public R result { get; set; }
+        public int id { get; set; }
     }
 }

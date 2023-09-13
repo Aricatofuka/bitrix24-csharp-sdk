@@ -1,7 +1,9 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 
-namespace BXRest.Api.Models.Tasks.Task
+namespace BXRest.Models.Tasks.Task
 {
     public class iGet
     {
@@ -11,8 +13,12 @@ namespace BXRest.Api.Models.Tasks.Task
         public List<iBXRestTaskFieldsName>? select { get; set; }
     }
 
+
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum iBXRestTaskFieldsName
     {
+        [EnumMember(Value = "*")]
+        all, // выборка всех полей
         ID, // идентификатор задачи
         PARENT_ID, // идентификатор родительской задачи
         TITLE, // название задачи
@@ -61,7 +67,8 @@ namespace BXRest.Api.Models.Tasks.Task
         DURATION_TYPE, // тип единицы измерения в планируемой длительности: days, hours или minutes
         ACTIVITY_DATE,
         TAGS,
-        ALLOW_TIME_TRACKING // разрешён трек времени
+        ALLOW_TIME_TRACKING, // разрешён трек времени
+        UF_AUTO_957927659722, // сложность
     }
 
     public class iGetResult

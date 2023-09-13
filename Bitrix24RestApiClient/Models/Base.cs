@@ -1,8 +1,10 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
+using System.Reflection;
 
 namespace BXRest.Api.Models
 {
-    public class Base
+    public static class Base
     {
         public class iBXRestBaseParam
         {
@@ -23,6 +25,12 @@ namespace BXRest.Api.Models
             Desc
         }
 
+        public static string GetDescriptionEnum(this Enum value)
+        {
+            FieldInfo field = value.GetType().GetField(value.ToString());
+            DescriptionAttribute attribute = field.GetCustomAttribute<DescriptionAttribute>();
+            return attribute != null ? attribute.Description : value.ToString();
+        }
         /*
         enum MyEnum
         {
@@ -137,7 +145,7 @@ namespace BXRest.Api.Models
 
 
         // Console.WriteLine(CountryType.UnitedStates); // "United States"
-       
+
         */
     }
 }

@@ -1,5 +1,8 @@
-﻿namespace BXRest.Core.Models.Enums
+﻿namespace BXRest.Core.Models
 {
+    /// <summary>
+    /// Список все доступных методов
+    /// </summary>
     public static class RestMedots
     {
         public static string Batch = "batch";
@@ -104,7 +107,7 @@
 
                 public static string Contact = Base + "contact";
                 public static string ContactItems = Base + "contact.items";
-              
+
             }
 
             public static class Requisite
@@ -127,7 +130,7 @@
         }
 
         public static class Task
-        { 
+        {
             private static string Base = "task.";
             public static class ElapsedItem
             {
@@ -139,6 +142,25 @@
                 public static string Delete = Base + "delete"; // Удаляет запись о затраченном времени
                 public static string IsactionAllowed = Base + "isactionallowed"; // Проверяет разрешено ли действие
                 public static string Update = Base + "update"; //  Изменяет параметры записи о затраченном времени
+            }
+
+            public static class Item
+            {
+                private static string Base = "task.item.";
+                public static class Userfield
+                {
+                    private static string Base = "task.item.userfield.";
+
+                    public static string GetFields = Base + "getfields"; // Получение всех доступных полей свойства
+                    public static string GetTypes = Base + "gettypes"; // Получение всех доступных типов данных
+                    public static string Add = Base + "add"; // Создание нового свойства
+                    public static string Get = Base + "get"; // Получение свойства по идентификатору
+                    public static string GetList = Base + "getlist"; // Получение списка свойств
+                    public static string Update = Base + "update"; // Редактирование параметров свойства
+                    public static string Delete = Base + "delete"; // Удаление свойства
+                }
+             
+     
             }
         }
 
@@ -198,15 +220,37 @@
                 public static string Update = Base + "update"; // Обновляет задачу
             }
         }
-    }
 
-    public class EntryPointPrefixTasks
-    {
 
-    }
+        public static class SonetGroup
+        {
+            private static string Base = "sonet_group.";
 
-    public class EntryPointPrefixTasksTask
-    {
+            public static string Create = Base + "create"; // Создает группу соцсети, используя метод API CSocNetGroup::CreateGroup(), указывая владельцем группы текущего пользователя
+            public static string Delete = Base + "delete"; // Удаляет группу соцсети
 
+            public static class Feature
+            {
+                private static string Base = "sonet_group.feature.";
+                public static string Access = Base + "access"; // Проверяет, имеет ли текущий пользователь право на совершение операции в группе соцсети, осуществляя вызов функции CSocNetFeaturesPerms::CurrentUserCanPerformOperation()
+            }
+
+            public static string Get = Base + "get"; //  Возвращает массив групп соцсети, каждая из которых содержит массив полей, осуществляя вызов CSocNetGroup::GetList(), при этом возвращаются только те группы, которые доступны пользователю по правам
+            public static string Setowner = Base + "setowner"; // Изменяет владельца группы
+            public static string Update = Base + "setowner"; // Изменяет параметры группы соцсети, используя метод API CSocNetGroup::Update()
+
+            public static class User
+            {
+                private static string Base = "sonet_group.user.";
+
+                public static string Add = Base + "add"; // Добавляет пользователей в качестве участников рабочей группы (без приглашения и подтверждения)
+                public static string Delete = Base + "delete"; // Удаляет пользователей из рабочей группы.
+                public static string Get = Base + "get"; // Возвращает массив участников группы соцсети, осуществляя вызов CSocNetUserToGroup::GetList(), при этом проверяются права на доступ текущего пользователя к группе
+                public static string Groups = Base + "groups"; // Возвращает массив групп соцсети текущего пользователя, осуществляя вызов CSocNetUserToGroup::GetList()
+                public static string Invite = Base + "invite"; // Выполняет приглашение пользователей в группу соцсети от лица текущего пользователя, при этом проверяются права на доступ текущего пользователя к группе
+                public static string Request = Base + "request"; // тправляет запрос текущего пользователя на вступление в группу соцсети, при этом проверяются права на доступ текущего пользователя к группе
+                public static string Update = Base + "update"; // Изменяет роль пользователей в рабочей группе
+            }
+        }
     }
 }

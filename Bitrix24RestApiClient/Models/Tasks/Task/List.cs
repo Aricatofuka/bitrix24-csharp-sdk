@@ -1,14 +1,19 @@
-﻿using Newtonsoft.Json;
+﻿using BXRest.Converter;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using static BXRest.Api.Models.Base;
+using static BXRest.Models.Parameter.Request.Filter;
 
-namespace BXRest.Api.Models.Tasks.Task
+namespace BXRest.Models.Tasks.Task
 {
-    public class iList
+    public class iList : iBXRestBaseParam
     {
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public iListOrder? order { get; set; }
-        public iListFilter filter { get; set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        [JsonConverter(typeof(FilterWithSpecialCharacter<iListFilter>))]
+        public iBXFilterValue<iListFilter> filter { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public List<iBXRestTaskFieldsName>? select { get; set; }
@@ -55,40 +60,7 @@ namespace BXRest.Api.Models.Tasks.Task
         public List<int>? ID { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public int? GreaterThanID { get; set; }
-
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public int? LessThanID { get; set; }
-
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public int? GreaterThanOrEqualID { get; set; }
-
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public int? LessThanOrEqualID { get; set; }
-
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public int? EqualToID { get; set; }
-
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public int? NotEqualToID { get; set; }
-
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string? ACTIVITY_DATE { get; set; }
-
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? GreaterThanACTIVITY_DATE { get; set; }
-
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? GreaterThanOrEqualACTIVITY_DATE { get; set; }
-
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? LessThanACTIVITY_DATE { get; set; }
-
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? LessThanOrEqualACTIVITY_DATE { get; set; }
-
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? NotEqualToACTIVITY_DATE { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public int? PARENT_ID { get; set; }
@@ -145,34 +117,10 @@ namespace BXRest.Api.Models.Tasks.Task
         public string? CREATED_DATE { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? GreaterThanCREATED_DATE { get; set; }
-
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? LessThanCREATED_DATE { get; set; }
-
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? GreaterThanOrEqualCREATED_DATE { get; set; }
-
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? LessThanOrEqualCREATED_DATE { get; set; }
-
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string? CLOSED_DATE { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string? CHANGED_DATE { get; set; }
-
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? GreaterThanCHANGED_DATE { get; set; }
-
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? LessThanCHANGED_DATE { get; set; }
-
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? GreaterThanOrEqualCHANGED_DATE { get; set; }
-
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? LessThanOrEqualCHANGED_DATE { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public int? ACCOMPLICE { get; set; }

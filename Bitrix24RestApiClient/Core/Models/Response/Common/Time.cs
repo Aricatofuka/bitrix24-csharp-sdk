@@ -1,26 +1,15 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 
 namespace BXRest.Core.Models.Response.Common
 {
     public class Time
 	{
-		[JsonProperty("start")]
-		public decimal Start { get; set; }
+		public decimal start { get; set; }
+		public decimal finish { get; set; }
 
-		[JsonProperty("finish")]
-		public decimal Finish { get; set; }
-
-		[JsonProperty("duration")]
-		public decimal Duration { get; set; }
-
-		[JsonProperty("processing")]
-		public decimal Processing { get; set; }
-
-		[JsonProperty("date_start")]
-		public DateTimeOffset DateStart { get; set; }
-
-		[JsonProperty("date_finish")]
-		public DateTimeOffset DateFinish { get; set; }
+		public decimal duration { get; set; }
+		public decimal processing { get; set; }
+		public DateTimeOffset dateStart { get; set; }
+		public DateTimeOffset dateFinish { get; set; }
     }
 }

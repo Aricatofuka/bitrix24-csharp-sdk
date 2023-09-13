@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 
-namespace BXRest.Api.Models.User
+namespace BXRest.Models.User
 {
     /// <summary>
     /// Пользователи

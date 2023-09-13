@@ -1,5 +1,4 @@
 ﻿using System.Threading.Tasks;
-using BXRest.Core.Models.Enums;
 
 namespace BXRest.Core.Client
 {

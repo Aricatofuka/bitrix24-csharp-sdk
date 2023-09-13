@@ -1,9 +1,9 @@
 ﻿using System.Threading.Tasks;
 using BXRest.Core.Client;
-using BXRest.Core.Models.Enums;
 using BXRest.Core.Models.Response;
-using BXRest.Api.Models.User;
 using System.Collections.Generic;
+using BXRest.Models.User;
+using BXRest.Core.Models;
 
 namespace BXRest.Api
 {
@@ -43,9 +43,9 @@ namespace BXRest.Api
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
-        public async Task<GetResponse<List<iUser>>> Get(iGet param)
+        public async Task<iGetRespnse<List<iUser>>> Get(iGet param)
         {
-            return await client.SendPostRequest<iGet, GetResponse<List<iUser>>>(RestMedots.User.Get, param);
+            return await client.SendPostRequest<iGet, iGetRespnse<List<iUser>>>(RestMedots.User.Get, param);
         }
 
         /*

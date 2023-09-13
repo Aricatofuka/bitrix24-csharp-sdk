@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 
-namespace BXRest.Api.Models.Tasks.ElapsedItem
+namespace BXRest.Models.Tasks.ElapsedItem
 {
     public class iElapsedItem
     {
