@@ -13,14 +13,14 @@ namespace BXRest.Converter
     {
 
         // возможно когданибудь надг будет написать, но сейчас в этом нет никакого смысла
-        public override iBXFilterValue<T> ReadJson(JsonReader reader, Type objectType, [AllowNull] iBXFilterValue<T> existingValue, bool hasExistingValue, Newtonsoft.Json.JsonSerializer serializer)
+        public override iBXFilterValue<T> ReadJson(JsonReader reader, Type objectType, [AllowNull] iBXFilterValue<T> existingValue, bool hasExistingValue, JsonSerializer serializer)
         {
 
             string boolValue = reader.Value?.ToString().ToLower();
-            throw new Newtonsoft.Json.JsonException($"{reader.Path}:{boolValue}, ReadJson not writed.");
+            throw new JsonException($"{reader.Path}:{boolValue}, ReadJson not writed.");
         }
 
-        public override void WriteJson(JsonWriter writer, [AllowNull] iBXFilterValue<T> value, Newtonsoft.Json.JsonSerializer serializer)
+        public override void WriteJson(JsonWriter writer, [AllowNull] iBXFilterValue<T> value, JsonSerializer serializer)
         {
 
             writer.WriteStartObject();

@@ -46,8 +46,6 @@ namespace BXRest.Core.Client
                        .AppendPathSegment(metod)
                        .PostJsonAsync(args);
 
-                logger.LogWarning($"Bitrix24 API request\r\n\tMethod: {metod}\r\n\tArgs: {JsonConvert.SerializeObject(args)}\r\n\tBody: {responseBodyStr}\r\n\t");
-
                 TResponse responseBody = await response.GetJsonAsync<TResponse>();
                 return responseBody;
             }
@@ -56,13 +54,13 @@ namespace BXRest.Core.Client
                 try
                 {
                     responseBodyStr = Regex.Unescape(await ex.Call.Response.GetStringAsync());
-                    logger.LogError($"Bitrix24 API request\r\n\tMethod: {metod}\r\n\tArgs: {JsonConvert.SerializeObject(args)}\r\n\tBody: {responseBodyStr}\r\n\t Flurl: {ex.Message} {ex.ToString()}\r\n\t");
+                    logger.LogError($"Bitrix24 API request\r\n\tMethod: {metod}\r\n\t  Flurl: {ex.Message} {ex.ToString()}\r\n\t Args: {JsonConvert.SerializeObject(args)}\r\n\tBody: {responseBodyStr}\r\n\t");
                     throw new Exception(responseBodyStr);
                 }
                 catch 
                 {
                     logger.LogError($"Bitrix24 API request\r\n\tMethod: {metod}\r\n\tArgs: {JsonConvert.SerializeObject(args)}\r\n\tBody: {responseBodyStr}\r\n");
-                    throw;
+                    throw new Exception(ex.Message + ex.ToString());
                 }
             }
         }

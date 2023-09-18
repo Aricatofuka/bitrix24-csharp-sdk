@@ -5,6 +5,9 @@ using System.Collections.Generic;
 
 namespace BXRest.Models.Tasks.Task
 {
+    /// <summary>
+    /// Данные о задаче, так как апи необходимо передавать название отдаваемых полей, каждое из них ниже помеченно как возможный null 
+    /// </summary>
     public class iTask
     {
         /// <summary>
@@ -19,7 +22,15 @@ namespace BXRest.Models.Tasks.Task
         /// Тип: string
         /// </summary>
         public int? parentId { get; set; } = null;
+
+        /// <summary>
+        /// Заголовок
+        /// </summary>
         public string? title { get; set; } = null;
+
+        /// <summary>
+        /// Описание
+        /// </summary>
         public string? description { get; set; } = null;
         /// <summary>
         /// Приоритет
@@ -92,27 +103,54 @@ namespace BXRest.Models.Tasks.Task
         public int? subStatus { get; set; } = null;
         public iPeople? creator { get; set; } = null;
         public iPeople? responsible { get; set; } = null;
-        public string? ufAuto957927659722 { get; set; } // сложность
-            /* TODO: разобраться что за херня
+
+        /// <summary>
+        /// Кастомное поле сложность, в теории может быть удалено с битрикса в любой момент
+        /// </summary>
+        public string? ufAuto957927659722 { get; set; }
+
+        [JsonConverter(typeof(ObjectOrDef<iTaskGroup>))]
+        public iTaskGroup? group { get; set; }
+ 
         [JsonConverter(typeof(YesNoBX))]
         public bool? allowTimeTracking { get; set; } = null;
-        public iTaskGroup? group { get; set; } = null;
-
+        /* TODO: разобраться что за херня
         [JsonConverter(typeof(DictionaryButArrayIfNull<int, iPeople>))]
         public Dictionary<int, iPeople>? accomplicesData { get; set; }
 
         [JsonConverter(typeof(DictionaryButArrayIfNull<int, iPeople>))]
         public Dictionary<int, iPeople>? auditorsData { get; set; }
         */
-        // action
     }
 
-     public class iTaskGroup
+    /// <summary>
+    /// Базавые данные о группе к которой относиться задача, отдаваеться в месте с задачей, полные данные имют иное представление
+    /// </summary>
+    public class iTaskGroup
     {
+        /// <summary>
+        /// уникальный индификатор
+        /// </summary>
         public int id { get; set; }
+
+        /// <summary>
+        /// Имя группы
+        /// </summary>
         public string name { get; set; }
+
+        /// <summary>
+        /// Открытая ли эта группа
+        /// </summary>
         public bool opened { get; set; }
+
+        /// <summary>
+        /// Колличество человек
+        /// </summary>
         public int membersCount { get; set; }
+
+        /// <summary>
+        /// Сылка на изображение-аватар
+        /// </summary>
         public string image { get; set; }
         public List<int?> additionalData { get; set; }
      }

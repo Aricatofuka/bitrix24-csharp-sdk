@@ -30,10 +30,6 @@ namespace BXRest.Converter
         public override void WriteJson(JsonWriter writer, [AllowNull] Dictionary<K, T> value, Newtonsoft.Json.JsonSerializer serializer)
         {
             writer.WriteValue(value);
-            // throw new Newtonsoft.Json.JsonException("DictionaryButArrayIfNull not writed.");
-            // throw new NotImplementedException();
         }
-
-      // public override bool CanWrite { get { return false; } }
     }
 }

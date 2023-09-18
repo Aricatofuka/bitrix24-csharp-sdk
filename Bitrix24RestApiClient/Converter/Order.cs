@@ -8,7 +8,7 @@ namespace BXRest.Converter
     internal class OrderBX : JsonConverter<iBXRestOrder>
     {
 
-        public override iBXRestOrder ReadJson(JsonReader reader, Type objectType, [AllowNull] iBXRestOrder existingValue, bool hasExistingValue, Newtonsoft.Json.JsonSerializer serializer)
+        public override iBXRestOrder ReadJson(JsonReader reader, Type objectType, [AllowNull] iBXRestOrder existingValue, bool hasExistingValue, JsonSerializer serializer)
         {
 
             string boolValue = reader.Value?.ToString().ToLower();
@@ -20,7 +20,7 @@ namespace BXRest.Converter
             {
                 return iBXRestOrder.Desc;
             }
-            throw new Newtonsoft.Json.JsonException($"{reader.Path}:{boolValue}, Invalid iBXRestOrder.");
+            throw new JsonException($"{reader.Path}:{boolValue}, Invalid iBXRestOrder.");
         }
 
         public override void WriteJson(JsonWriter writer, [AllowNull] iBXRestOrder value, Newtonsoft.Json.JsonSerializer serializer)

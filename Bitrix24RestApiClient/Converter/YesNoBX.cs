@@ -10,7 +10,7 @@ namespace BXRest.Converter
     public class YesNoBX : JsonConverter<bool>
     {
 
-        public override bool ReadJson(JsonReader reader, Type objectType, [AllowNull] bool existingValue, bool hasExistingValue, Newtonsoft.Json.JsonSerializer serializer)
+        public override bool ReadJson(JsonReader reader, Type objectType, [AllowNull] bool existingValue, bool hasExistingValue, JsonSerializer serializer)
         {
 
             string boolValue = reader.Value?.ToString().ToLower();
@@ -22,10 +22,10 @@ namespace BXRest.Converter
             {
                 return false;
             }
-            throw new Newtonsoft.Json.JsonException($"{reader.Path}:{boolValue}, Invalid Boolean.");
+            throw new JsonException($"{reader.Path}:{boolValue}, Invalid Boolean.");
         }
 
-        public override void WriteJson(JsonWriter writer, [AllowNull] bool value, Newtonsoft.Json.JsonSerializer serializer)
+        public override void WriteJson(JsonWriter writer, [AllowNull] bool value, JsonSerializer serializer)
         {
             switch (value)
             {
