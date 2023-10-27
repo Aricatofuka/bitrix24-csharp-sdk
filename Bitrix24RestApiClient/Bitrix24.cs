@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using System;
 using static BXRest.Api.Models.Base;
 using BXRest.Models.Tasks.Task;
+using BXRest.Core.Models;
+using BXRest.Models.Tasks.ElapsedItem;
 
 namespace BXRest
 {
@@ -92,6 +94,44 @@ namespace BXRest
             {
                 return respon.result.tasks;
             }
+        }
+
+
+        /// <summary>
+        /// Зацикленный мeтод для получения всех данных из битрикса по отдельному запросу
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="R"></typeparam>
+        /// <param name="fan"></param>
+        /// <param name="param"></param>
+        /// <returns></returns>
+        public async Task<List<R>> getAllAlternative<T, R>(Func<T, Task<iGetRespnse<List<R>>>> fan, T param) where T : iBXRestBaseParamAlternative
+        {
+            var respon = await fan(param);
+
+            if (respon.next != null && respon.next != 0)
+            {
+                param.PARAMS = new iParam()
+                {
+                    NAV_PARAMS = new iGetParamNavParams()
+                    {
+                        nPageSize = 50,
+                        iNumPage = respon.next / 50 + 1
+                    }
+                };
+
+
+                var respon2 = await getAllAlternative(fan, param);
+
+                respon.result.AddRange(respon2);
+
+                return respon.result;
+            }
+            else
+            {
+                return respon.result;
+            }
+
         }
     }
 }

@@ -9,7 +9,7 @@ namespace BXRest.Models.User
     public class iGet: iBXRestBaseParam
     {
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public List<int>? ID { get; set; }
+        public List<uint>? ID { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string? order { get; set; }
@@ -20,6 +20,10 @@ namespace BXRest.Models.User
     }
 
     public class iGetFilter {
+
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public List<uint>? ID { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public List<string>? PERSONAL_BIRTHDAY { get; set; }
@@ -40,7 +44,7 @@ namespace BXRest.Models.User
         public string? USER_TYPE { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        [JsonConverter(typeof(YesNoBX))]
+       // [JsonConverter(typeof(YesNoBX))]
         public bool? ACTIVE { get; set; }
     }
 }

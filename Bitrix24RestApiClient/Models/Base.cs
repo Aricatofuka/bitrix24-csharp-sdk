@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BXRest.Api.Models.Tasks.ElapsedItem;
+using Newtonsoft.Json;
+using System;
 using System.ComponentModel;
 using System.Reflection;
 
@@ -8,7 +10,29 @@ namespace BXRest.Api.Models
     {
         public class iBXRestBaseParam
         {
+            [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
             public int? start { get; set; }
+        }
+
+        public class iBXRestBaseParamAlternative
+        {
+            [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+            public iParam? PARAMS { get; set; }
+        }
+
+        public class iParam
+        {
+            public iGetParamNavParams NAV_PARAMS { get; set; }
+        }
+
+        public class iGetParamNavParams
+        {
+
+            [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+            public int? nPageSize { get; set; }  // колличество элементов на странице. В целях ограничения нагрузки на постраничную навигацию наложено ограничение в 50 записей.
+
+            [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+            public int? iNumPage { get; set; } //  номер страницы при постраничной навигации.
         }
 
         public enum iBXRestYesNo

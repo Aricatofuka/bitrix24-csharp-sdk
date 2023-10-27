@@ -35,6 +35,7 @@ namespace BXRest.Api.TaskMetodts
             return await client.SendPostRequest<iGetList, iGetRespnse<List<iElapsedItem>>>(RestMedots.Task.ElapsedItem.GetList, param);
         }
 
+        /*
 
         /// <summary>
         /// Получение списка зписей о треках в задачу
@@ -68,5 +69,6 @@ namespace BXRest.Api.TaskMetodts
                 return respon;
             }
         }
+        */
     }
 }

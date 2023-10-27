@@ -15,7 +15,7 @@ namespace BXRest.Models.User
         /// ID
         /// Тип: string
         /// </summary>
-        public int ID { get; set; }
+        public uint ID { get; set; }
 
         /// <summary>
         /// Активность

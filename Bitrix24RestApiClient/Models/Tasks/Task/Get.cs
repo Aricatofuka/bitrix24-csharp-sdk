@@ -5,8 +5,10 @@ using System.Runtime.Serialization;
 
 namespace BXRest.Models.Tasks.Task
 {
+    /// Параметр для получени задачи
     public class iGet
     {
+        /// идификатор задачи
         public int taskId { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
@@ -17,8 +19,9 @@ namespace BXRest.Models.Tasks.Task
     [JsonConverter(typeof(StringEnumConverter))]
     public enum iBXRestTaskFieldsName
     {
+        /// выборка всех полей
         [EnumMember(Value = "*")]
-        all, // выборка всех полей
+        all, 
         ID, // идентификатор задачи
         PARENT_ID, // идентификатор родительской задачи
         TITLE, // название задачи

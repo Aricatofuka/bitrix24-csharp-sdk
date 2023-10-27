@@ -7,7 +7,7 @@ using static BXRest.Models.Parameter.Request.Filter;
 
 namespace BXRest.Api.Models.Tasks.ElapsedItem
 {
-    public class iGetList
+    public class iGetList : iBXRestBaseParamAlternative
     {
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
@@ -23,10 +23,6 @@ namespace BXRest.Api.Models.Tasks.ElapsedItem
         public iBXFilterValue<iGetListFilter>? FILTER { get; set; }
 
         public List<string>? SELECT { get; set; } = new List<string>() { "*" };
-
-
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public iGetListParam? PARAMS { get; set; }
     }
 
     /*
@@ -44,7 +40,7 @@ namespace BXRest.Api.Models.Tasks.ElapsedItem
         public int? ID { get; set; } // идентификатор комментария
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public List<int>? USER_ID { get; set; } // идентификатор пользователя, от имени которого была сделана запись о затраченном времени
+        public List<uint>? USER_ID { get; set; } // идентификатор пользователя, от имени которого была сделана запись о затраченном времени
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? CREATED_DATE { get; set; } // дата создания записи
@@ -88,21 +84,5 @@ namespace BXRest.Api.Models.Tasks.ElapsedItem
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore), JsonConverter(typeof(OrderBX))]
         public iBXRestOrder? DATE_STOP { get; set; }
-    }
-
-
-    public class iGetListParam
-    {
-        public iGetListParamNavParams NAV_PARAMS { get; set; }
-    }
-
-    public class iGetListParamNavParams
-    {
-
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public int? nPageSize { get; set; }  // колличество элементов на странице. В целях ограничения нагрузки на постраничную навигацию наложено ограничение в 50 записей.
-
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public int? iNumPage { get; set; } //  номер страницы при постраничной навигации.
     }
 }

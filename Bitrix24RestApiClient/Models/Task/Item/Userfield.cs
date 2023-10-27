@@ -1,11 +1,10 @@
 ﻿using BXRest.Converter;
 using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace BXRest.Models.Task.Item
 {
-    /// <summary>
     /// Модель костомных полей у задач в битриксе когда мы запрашивает одно поле через метод task.item.userfield.get
-    /// </summary>
     public class iUserfieldWhenGetOne: iUserfield
     {
         public iUserfieldLabel EDIT_FORM_LABEL { get; set; }
@@ -15,11 +14,10 @@ namespace BXRest.Models.Task.Item
         public iUserfieldLabel HELP_MESSAGE { get; set; }
     }
 
-    /// <summary>
     /// Модель костомных полей у задач в битриксе, для метода task.item.userfield.getlist
-    /// </summary>
     public class iUserfield
     {
+        /// индификатор
         public int ID { get; set; }
         public string ENTITY_ID { get; set; }
         public string FIELD_NAME { get; set; }
@@ -47,7 +45,20 @@ namespace BXRest.Models.Task.Item
         [JsonConverter(typeof(YesNoBX))]
         public bool IS_SEARCHABLE { get; set; }
 
+        /// это свойство есть только у enum свойств
+        public List<iUserfieldList>? LIST { get; set; }
+
         public dynamic SETTINGS { get; set; } // TODO: разобраться позже
+    }
+
+    public class iUserfieldList
+    {
+        public uint ID { get; set; }
+        public uint SORT { get; set; }
+        public string VALUE { get; set; }
+
+        [JsonConverter(typeof(YesNoBX))]
+        public bool DEF { get; set; }
     }
     /*
     public class iUserfieldSettings

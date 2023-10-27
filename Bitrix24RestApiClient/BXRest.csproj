@@ -17,17 +17,14 @@
 
 Это версия пригодна к использованию в продакшене, но учитывайте, что первое время будут периодически появляться брэйкинг чеинджис. Если Вам понравилась моя идея по созданию библиотеки, но нашли ошибку или не нашли нужную Вам фичу, то напишите, пожалуйста, мне по почте timergalin@gmail.com или в вайбер по номеру +79222404311 и я внесу правки.</Description>
     <PackageIconUrl />
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Flurl" Version="3.0.2" />
-    <PackageReference Include="Flurl.Http" Version="3.2.0" />
+    <PackageReference Include="Flurl" Version="3.0.7" />
+    <PackageReference Include="Flurl.Http" Version="3.2.4" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Api\Tasks\" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.1" />
   </ItemGroup>
 
 </Project>

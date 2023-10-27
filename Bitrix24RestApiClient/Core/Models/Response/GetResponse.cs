@@ -1,4 +1,5 @@
 ﻿using BXRest.Core.Models.Response.Common;
+using static BXRest.Api.Models.Base;
 
 namespace BXRest.Core.Models.Response
 {
