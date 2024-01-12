@@ -5,8 +5,9 @@ using System.Threading.Tasks;
 using System;
 using static BXRest.Api.Models.Base;
 using BXRest.Models.Tasks.Task;
-using BXRest.Core.Models;
-using BXRest.Models.Tasks.ElapsedItem;
+using Flurl.Http;
+using Newtonsoft.Json;
+using Flurl.Http.Newtonsoft;
 
 namespace BXRest
 {
@@ -15,18 +16,33 @@ namespace BXRest
     /// </summary>
     public class Bitrix24
     {
+
+        /// Конструктор
         public Bitrix24(IBitrix24Client client)
         {
             User = new Api.User(client);
             Tasks = new Api.Tasks(client);
             Task = new Api.Task(client);
             SonetGroup = new Api.SonetGroup(client);
+            Department = new Api.Department(client);
+  
+            FlurlHttp.Clients.UseNewtonsoft();
         }
 
+        /// Ветка методов по работе с пользователями
         public Api.User User { get; private set; }
+
+        /// Ветка методов по работе с задачами
         public Api.Tasks Tasks { get; private set; }
+
+        /// Ветка методов по работе с задачами (другой)
         public Api.Task Task { get; private set; }
+
+        /// Ветка методов по работе с соцсетями
         public Api.SonetGroup SonetGroup { get; private set; }
+
+        /// Ветка методов по работе с подразеделниями 
+        public Api.Department Department { get; private set; }
     }
 
     /// <summary>
@@ -56,11 +72,8 @@ namespace BXRest
             if (respon.next != null && respon.next != 0)
             {
                 param.start = respon.next;
-
                 var respon2 = await getAll(fan, param);
-
                 respon.result.AddRange(respon2);
-
                 return respon.result;
             }
             else

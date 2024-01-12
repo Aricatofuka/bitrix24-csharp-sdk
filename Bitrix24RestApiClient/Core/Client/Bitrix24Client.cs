@@ -41,12 +41,19 @@ namespace BXRest.Core.Client
 
             try
             {
+                
+                string serialized = JsonConvert.SerializeObject(args, Formatting.None, new JsonSerializerSettings
+                {
+                    NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore,
+                    DefaultValueHandling = DefaultValueHandling.Ignore
+                }); // пербразуем сторуку в json игнорируя ключи с пустыми значениями
 
-                IFlurlResponse response = await webhookUrl
-                       .AppendPathSegment(metod)
-                       .PostJsonAsync(args);
+                TResponse responseBody = await webhookUrl
+                      .AppendPathSegment(metod)
+                      .WithHeader("Content-Type", "application/json")
+                      .PostStringAsync(serialized)
+                      .ReceiveJson<TResponse>(); // PostJsonAsync - будет вносить пустые поля, поэтому его использовать не будет, так как битрикс зачемто на ни реагирует
 
-                TResponse responseBody = await response.GetJsonAsync<TResponse>();
                 return responseBody;
             }
             catch(FlurlHttpException ex)

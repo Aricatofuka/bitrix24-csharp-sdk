@@ -1,22 +1,17 @@
-#nullable enable
-using Microsoft.VisualBasic;
+using BXRest.Converter;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 
 namespace BXRest.Models.User
 {
-    /// <summary>
     /// Пользователи
-    /// </summary>
     public class iUser
     {
-        /// <summary>
         /// ID
-        /// Тип: string
-        /// </summary>
+        /// [JsonConverter(typeof(StringToNumberConverter<uint>))]
         public uint ID { get; set; }
-
+        
         /// <summary>
         /// Активность
         /// Тип: string
@@ -183,13 +178,13 @@ namespace BXRest.Models.User
         /// Подразделения
         /// Тип: string
         /// </summary>
-        public List<int> UF_DEPARTMENT { get; set; }
+        public List<uint> UF_DEPARTMENT { get; set; }
 
         /// <summary>
         /// Интересы
         /// Тип: string
         /// </summary>
-        public string? UfInterUF_INTERESTSests { get; set; }
+        public string? UF_INTERESTS{ get; set; }
 
         /// <summary>
         /// Навыки

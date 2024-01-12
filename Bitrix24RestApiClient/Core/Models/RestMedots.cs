@@ -28,9 +28,32 @@
                 public static readonly string list = "list";
             }
         }
+
+        /// Department
+        public static class Department
+        {
+            private static readonly string Base = "department.";
+
+            /// Создает подразделение
+            public static readonly string Add = Base + "add";
+
+            /// Изменяет подразделение
+            public static readonly string Update = Base + "update";
+
+            /// Получение фильтрованного списка подразделений
+            public static readonly string Get = Base + "get";
+
+            /// Получение фильтрованного списка подразделений
+            public static readonly string Fields = Base + "fields";
+
+            /// Получение списка названий полей подразделения.
+            public static readonly string Delete = Base + "delete";
+        }
+
+        /// CRM
         public static class Crm
         {
-            private static string Base = "crm.";
+            private static readonly string Base = "crm.";
             public static readonly string StageHistory = Base + "stagehistory";
             public static readonly string Status = Base + "status";
             public static readonly string Type = Base + "type";
@@ -44,10 +67,10 @@
             public static readonly string Item = Base + "item";
             public static readonly string RequisiteBase = Base + "requisite";
 
-
+            /// CRM документы
             public static class Contact
             {
-                private static string Base = "crm.contact.";
+                private static readonly string Base = "crm.contact.";
 
                 /// Создаёт новый контакт
                 public static readonly string Add = Base + "add"; 

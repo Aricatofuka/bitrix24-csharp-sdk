@@ -8,10 +8,12 @@ using BXRest.Core.Models;
 namespace BXRest.Api
 {
 
+    /// набор методов пространства имен user
     public class User
     {
         private IBitrix24Client client;
 
+        /// init
         public User(IBitrix24Client client)
         {
             this.client = client;
@@ -37,6 +39,26 @@ namespace BXRest.Api
             return (await client.SendPostRequest<CrmSearchRequestArgs, ListResponse<TEntity>>(entityTypePrefix, EntityMethod.Search, builder.BuildArgs())).Result.FirstOrDefault();
         }
         */
+
+        /// <summary>
+        /// Получение пользователей
+        /// </summary>
+        /// <param name="param"></param>
+        /// <returns></returns>
+        public async Task<iGetRespnse<bool>> Admin(iAdminParam param)
+        {
+            return await client.SendPostRequest<iAdminParam, iGetRespnse<bool>>(RestMedots.User.Admin, param);
+        }
+
+        /// <summary>
+        /// Получение пользователей
+        /// </summary>
+        /// <param name="param"></param>
+        /// <returns></returns>
+        public async Task<iGetRespnse<iUser>> Current(iCurrentParam param)
+        {
+            return await client.SendPostRequest<iCurrentParam, iGetRespnse<iUser>>(RestMedots.User.Current, param);
+        }
 
         /// <summary>
         /// Получение пользователей

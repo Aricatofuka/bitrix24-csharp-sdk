@@ -6,6 +6,7 @@
     <Version>1.1.55</Version>
     <Authors>Rustam Shaikhatarov</Authors>
     <Company>-</Company>
+	<NullableContextOptions>enable</NullableContextOptions>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <RepositoryUrl>https://github.com/exio1989/bitrix24-csharp-sdk</RepositoryUrl>
@@ -23,6 +24,7 @@
   <ItemGroup>
     <PackageReference Include="Flurl" Version="4.0.0" />
     <PackageReference Include="Flurl.Http" Version="4.0.0" />
+    <PackageReference Include="Flurl.Http.Newtonsoft" Version="0.9.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>

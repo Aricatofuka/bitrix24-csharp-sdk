@@ -1,11 +1,10 @@
-﻿
-using BXRest.Converter;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 using static BXRest.Api.Models.Base;
 
 namespace BXRest.Models.User
 {
+    /// Параметры для получения пользователя
     public class iGet: iBXRestBaseParam
     {
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
@@ -19,6 +18,7 @@ namespace BXRest.Models.User
 
     }
 
+    /// Фильтр запроса пользователя, относиться к модели выше
     public class iGetFilter {
 
 
