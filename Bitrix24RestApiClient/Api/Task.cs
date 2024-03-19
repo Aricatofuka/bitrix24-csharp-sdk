@@ -2,21 +2,15 @@
 
 namespace BXRest.Api
 {
-    public class Task
+    /// <summary>
+    /// Раздел по работе с задачами
+    /// </summary>
+    /// <param name="client"></param>
+    public class Task(IBitrix24Client client)
     {
-        private IBitrix24Client client;
-        public TaskMetodts.ElapsedItem ElapsedItem { get; set; }
-        public TaskMetodts.Item Item { get; set; }
-
-        /// <summary>
-        /// init
-        /// </summary>
-        /// <param name="client"></param>
-        public Task(IBitrix24Client client)
-        {
-            this.client = client;
-            ElapsedItem = new TaskMetodts.ElapsedItem(client);
-            Item = new TaskMetodts.Item(client);
-        }
+        /// Свойство для работы с затраченным временем по задачам
+        public TaskMetodts.ElapsedItem ElapsedItem { get; set; } = new TaskMetodts.ElapsedItem(client);
+        /// Свойство для работы с затраченным временем по задачам
+        public TaskMetodts.Item Item { get; set; } = new TaskMetodts.Item(client);
     }
 }

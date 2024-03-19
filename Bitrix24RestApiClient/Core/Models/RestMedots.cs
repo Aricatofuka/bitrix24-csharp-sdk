@@ -178,13 +178,18 @@
                 public static readonly string Comment = "crm.timeline.comment";
             }
 
+            /// Товарные позиции 
+            /// https://dev.1c-bitrix.ru/rest_help/crm/productrow/index.php
             public static readonly string ItemProduct = Base + "item.productrow";
 
         }
 
+        /// Старый но еще использемый раздел задач
         public static class Task
         {
             private static string Base = "task.";
+
+            /// Раздел затраченого времени на задачу
             public static class ElapsedItem
             {
                 private static string Base = "task.elapseditem.";
@@ -211,9 +216,12 @@
                 public static readonly string Update = Base + "update"; 
             }
 
+            /// Старый раздел задач
             public static class Item
             {
                 private static string Base = "task.item.";
+
+                /// Раздел с пользовательскими полями по задачам
                 public static class Userfield
                 {
                     private static string Base = "task.item.userfield.";
@@ -244,8 +252,10 @@
             }
         }
 
+        /// Раздел задач, новый судя по всему
         public static class Tasks
         {
+            /// Раздел задач
             public static class Task
             {
                 private static string Base = "tasks.task.";
@@ -260,6 +270,7 @@
                 /// Переводит задачу в статус «завершена»
                 public static readonly string Complete = Base + "complete"; 
 
+                /// Раздел счесчиков задачи
                 public static class Counters
                 {
                     /// Получает счетчики пользователя
@@ -278,6 +289,7 @@
                 /// Позволяет отклонить задачу
                 public static readonly string Disapprove = Base + "disapprove"; 
 
+                /// Раздел задача помеченных "лайком"
                 public static class Favorite
                 {
                     private static string Base = "tasks.task.favorite";
@@ -290,6 +302,7 @@
 
                 }
 
+                /// Раздел файлов прикрепленных к задаче
                 public static class Files
                 {
                     private static string Base = "tasks.task.favorite";
@@ -313,6 +326,7 @@
                 /// Метод для проверки доступа к задаче
                 public static readonly string Aetaccess = Base + "Aetaccess"; 
 
+                /// Раздел истории по по задаче
                 public static class History
                 {
                     /// Получает историю задачи
@@ -357,6 +371,7 @@
             /// Удаляет группу соцсети
             public static readonly string Delete = Base + "delete";
 
+            /// https://dev.1c-bitrix.ru/rest_help/sonet_group/sonet_group_feature_access.php
             public static class Feature
             {
                 private static string Base = "sonet_group.feature.";

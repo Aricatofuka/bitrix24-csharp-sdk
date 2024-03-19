@@ -7,18 +7,10 @@ using System.Threading.Tasks;
 
 namespace BXRest.Api
 {
-    /// <summary>
     /// Подкласс по работе с битриксовыми рабочими группами
-    /// </summary>
-    public class SonetGroup
+    public class SonetGroup(IBitrix24Client client)
     {
-        private IBitrix24Client client;
-        public TaskMetodts.ElapsedItem ElapsedItem { get; set; }
-        public SonetGroup(IBitrix24Client client)
-        {
-            this.client = client;
-            ElapsedItem = new TaskMetodts.ElapsedItem(client);
-        }
+        private readonly IBitrix24Client client = client;
 
         /// <summary>
         /// Получить группу
@@ -29,6 +21,5 @@ namespace BXRest.Api
         {
             return await client.SendPostRequest<iGet, iGetRespnse<List<iGroup>>>(RestMedots.SonetGroup.Get, param);
         }
-
     }
 }

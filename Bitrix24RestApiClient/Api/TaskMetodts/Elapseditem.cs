@@ -8,9 +8,7 @@ using System.Threading.Tasks;
 
 namespace BXRest.Api.TaskMetodts
 {
-    /// <summary>
     /// Набор запросов для работы с записами к задачам
-    /// </summary>
     public class ElapsedItem
     {
 

@@ -2,14 +2,10 @@
 
 namespace BXRest.Api
 {
-    public class Imbot
+    /// Rest api Методы бота
+    public class Imbot(IBitrix24Client client)
     {
-        private IBitrix24Client client;
-        public Api.ImbotMetodts.Message Message { get; set; }
-        public Imbot(IBitrix24Client client)
-        {
-            this.client = client;
-            Message = new ImbotMetodts.Message(client);
-        }
+        /// Раздел сообщений
+        public Api.ImbotMetodts.Message Message { get; set; } = new ImbotMetodts.Message(client);
     }
 }

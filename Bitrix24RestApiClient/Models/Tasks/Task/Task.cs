@@ -97,7 +97,7 @@ namespace BXRest.Models.Tasks.Task
         public bool? multitask { get; set; } = null;
 
         /// ID группы задач
-        public int? groupId { get; set; } = null;
+        public uint? groupId { get; set; } = null;
 
         /// ID этапа задачи
         public int? stageId { get; set; } = null;

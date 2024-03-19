@@ -3,15 +3,12 @@ using BXRest.Core.Models;
 
 namespace BXRest.Api.ImbotMetodts
 {
-    public class Message
+    /// Раздела по работе с ботами
+    public class Message(IBitrix24Client client)
     {
-        private IBitrix24Client client;
+        private IBitrix24Client client = client;
 
-        public Message(IBitrix24Client client)
-        {
-            this.client = client;
-        }
-
+        /// Добавление бота
         public dynamic Add(dynamic param, string auth) {
             return client.SendPostRequest(RestMedots.Imbot.Message.Add, param);
         }

@@ -4,15 +4,12 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace BXRest.Converter
 {
-    /// <summary>
     /// Конвертер битриксовых представлений о тру и фолс
-    /// </summary>
     public class YesNoBX : JsonConverter<bool>
     {
-
+        /// Вывод при чтении json
         public override bool ReadJson(JsonReader reader, Type objectType, [AllowNull] bool existingValue, bool hasExistingValue, JsonSerializer serializer)
         {
-
             string boolValue = reader.Value?.ToString().ToLower();
             if (boolValue.Equals("true") || boolValue.Equals("yes") || boolValue.Equals("y") || boolValue.Equals("1"))
             {
@@ -25,6 +22,7 @@ namespace BXRest.Converter
             throw new JsonException($"{reader.Path}:{boolValue}, Invalid Boolean.");
         }
 
+        /// Вывод при запись в json
         public override void WriteJson(JsonWriter writer, [AllowNull] bool value, JsonSerializer serializer)
         {
             switch (value)
@@ -34,6 +32,25 @@ namespace BXRest.Converter
                     break;
                 case false:
                     writer.WriteRawValue("false");
+                    break;
+
+            }
+        }
+    }
+
+    /// Для чтения и вывода параметров запроса битрикса
+    public class YesNoBXParamRequest : YesNoBX {
+
+        /// Вывод при запись в json
+        public override void WriteJson(JsonWriter writer, [AllowNull] bool value, JsonSerializer serializer)
+        {
+            switch (value)
+            {
+                case true:
+                    writer.WriteValue("Y");
+                    break;
+                case false:
+                    writer.WriteValue("N");
                     break;
 
             }
