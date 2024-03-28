@@ -45,9 +45,9 @@ namespace BXRest.Api
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
-        public async Task<iGetRespnse<bool>> Admin(iAdminParam param)
+        public async Task<iBXRespnse<bool>> Admin(iAdminParam param)
         {
-            return await client.SendPostRequest<iAdminParam, iGetRespnse<bool>>(RestMedots.User.Admin, param);
+            return await client.SendPostRequest<iAdminParam, iBXRespnse<bool>>(RestMedots.User.Admin, param);
         }
 
         /// <summary>
@@ -55,9 +55,9 @@ namespace BXRest.Api
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
-        public async Task<iGetRespnse<iUser>> Current(iCurrentParam param)
+        public async Task<iBXRespnse<iUser>> Current(iCurrentParam param)
         {
-            return await client.SendPostRequest<iCurrentParam, iGetRespnse<iUser>>(RestMedots.User.Current, param);
+            return await client.SendPostRequest<iCurrentParam, iBXRespnse<iUser>>(RestMedots.User.Current, param);
         }
 
         /// <summary>
@@ -65,9 +65,9 @@ namespace BXRest.Api
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
-        public async Task<iGetRespnse<List<iUser>>> Get(iGet param)
+        public async Task<iBXRespnse<List<iUser>>> Get(iGet param)
         {
-            return await client.SendPostRequest<iGet, iGetRespnse<List<iUser>>>(RestMedots.User.Get, param);
+            return await client.SendPostRequest<iGet, iBXRespnse<List<iUser>>>(RestMedots.User.Get, param);
         }
 
         /*

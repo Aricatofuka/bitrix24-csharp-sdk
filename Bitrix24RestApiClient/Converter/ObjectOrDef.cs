@@ -43,8 +43,34 @@ namespace BXRest.Converter
         /// <param name="serializer"></param>
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            // Просто записываем значение свойства
-            writer.WriteValue(value);
+            // Проверяем, не является ли значение null
+            if (value == null)
+            {
+                writer.WriteNull();
+                return;
+            }
+
+            // Получаем тип значения
+            Type valueType = value.GetType();
+
+            // Проверяем, соответствует ли тип значения универсальному типу T
+            if (typeof(T).IsAssignableFrom(valueType))
+            {
+                // Если да, сериализуем значение как объект типа T
+                serializer.Serialize(writer, value, typeof(T));
+            }
+            else
+            {
+                // Если тип значения не соответствует T (что странно, учитывая логику использования),
+                // можно выбросить исключение, либо сериализовать значение как есть.
+                // Выбор действия зависит от вашей специфики задачи.
+
+                // Выбрасываем исключение, если строгая типизация является обязательной
+                throw new JsonSerializationException($"Объект типа {valueType} не может быть сериализован как {typeof(T)}");
+
+                // ИЛИ сериализуем значение, как есть (не рекомендуется без явной необходимости)
+                // serializer.Serialize(writer, value);
+            }
         }
 
         /// <summary>

@@ -11,16 +11,22 @@ namespace BXRest.Converter
         public override iBXRestOrder ReadJson(JsonReader reader, Type objectType, [AllowNull] iBXRestOrder existingValue, bool hasExistingValue, JsonSerializer serializer)
         {
 
-            string boolValue = reader.Value?.ToString().ToLower();
-            if (boolValue.Equals("asc"))
+            string strJson = reader.Value?.ToString();
+            if (strJson != null)
             {
-                return iBXRestOrder.Asc;
+                strJson = strJson.ToLower();
+
+                if (strJson.Equals("asc"))
+                {
+                    return iBXRestOrder.Asc;
+                }
+                if (strJson.Equals("desc"))
+                {
+                    return iBXRestOrder.Desc;
+                }
             }
-            if (boolValue.Equals("desc"))
-            {
-                return iBXRestOrder.Desc;
-            }
-            throw new JsonException($"{reader.Path}:{boolValue}, Invalid iBXRestOrder.");
+
+            throw new JsonException($"{reader.Path}:{strJson}, Invalid iBXRestOrder.");
         }
 
         public override void WriteJson(JsonWriter writer, [AllowNull] iBXRestOrder value, Newtonsoft.Json.JsonSerializer serializer)

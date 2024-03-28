@@ -28,9 +28,9 @@ namespace BXRest.Api.TaskMetodts
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
-        public async Task<iGetRespnse<List<iElapsedItem>>> GetList(iGetList param)
+        public async Task<iBXRespnse<List<iElapsedItem>>> GetList(iGetList param)
         {
-            return await client.SendPostRequest<iGetList, iGetRespnse<List<iElapsedItem>>>(RestMedots.Task.ElapsedItem.GetList, param);
+            return await client.SendPostRequest<iGetList, iBXRespnse<List<iElapsedItem>>>(RestMedots.Task.ElapsedItem.GetList, param);
         }
 
         /*

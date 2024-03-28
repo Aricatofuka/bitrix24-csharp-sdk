@@ -8,52 +8,52 @@ using static BXRest.Models.Parameter.Request.Filter;
 
 namespace BXRest.Converter
 {
-
+    /// Для REST API BITRIX с не типичной постраничной навигацией
     public class FilterWithSpecialCharacter<T> : JsonConverter<iBXFilterValue<T>>
     {
 
-        // возможно когданибудь надг будет написать, но сейчас в этом нет никакого смысла
+        /// возможно когданибудь надо будет написать, но сейчас в этом нет никакого смысла
         public override iBXFilterValue<T> ReadJson(JsonReader reader, Type objectType, [AllowNull] iBXFilterValue<T> existingValue, bool hasExistingValue, JsonSerializer serializer)
         {
 
-            string boolValue = reader.Value?.ToString().ToLower();
-            throw new JsonException($"{reader.Path}:{boolValue}, ReadJson not writed.");
+            string strJson = reader.Value?.ToString();
+            throw new JsonException($"{reader.Path}:{strJson}, ReadJson not writed.");
         }
 
+        /// запись json
         public override void WriteJson(JsonWriter writer, [AllowNull] iBXFilterValue<T> value, JsonSerializer serializer)
         {
 
             writer.WriteStartObject();
-            foreach (KeyValuePair<SpecialCharacter, T> kvp in value)
+            if (value != null)
             {
-                foreach (var prop in kvp.Value.GetType().GetProperties())
+                foreach (KeyValuePair<SpecialCharacter, T> kvp in value)
                 {
-                    var writeValue = prop.GetValue(kvp.Value);
-                    if (writeValue != null)
+                    foreach (var prop in kvp.Value.GetType().GetProperties())
                     {
-                        writer.WritePropertyName(Base.GetDescriptionEnum(kvp.Key) + prop.Name);
-                        if (writeValue is IList)
+                        var writeValue = prop.GetValue(kvp.Value);
+                        if (writeValue != null)
                         {
-                            var writeEndValue = (IList)writeValue;
-                            writer.WriteStartArray();
-                            foreach (var item in writeEndValue)
+                            writer.WritePropertyName(Base.GetDescriptionEnum(kvp.Key) + prop.Name);
+                            if (writeValue is IList writeEndValue)
                             {
-                                writer.WriteValue(item);
-                            }
+                                writer.WriteStartArray();
+                                foreach (var item in writeEndValue)
+                                {
+                                    writer.WriteValue(item);
+                                }
 
-                            writer.WriteEndArray();
-                        }
-                        else
-                        {
-                            writer.WriteValue(writeValue);
+                                writer.WriteEndArray();
+                            }
+                            else
+                            {
+                                writer.WriteValue(writeValue);
+                            }
                         }
                     }
                 }
-
             }
             writer.WriteEndObject();
-            
-          
         }
     }
 }

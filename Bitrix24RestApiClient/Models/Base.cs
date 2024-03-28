@@ -11,6 +11,7 @@ namespace BXRest.Api.Models
         /// Базовые параметры запросов
         public class iBXRestBaseParam
         {
+            /// Откуда начинать выгрузку если используем постраничную навигацию
             [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
             public int? start { get; set; }
         }
@@ -18,42 +19,56 @@ namespace BXRest.Api.Models
         /// Альтернативные базовые параметры запросов
         public class iBXRestBaseParamAlternative
         {
+            /// Альтернативные параметры навигации если используенм постраничную навигацию
             [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
             public iParam? PARAMS { get; set; }
         }
 
+        /// Параметры для альтернативной постраничной навигации
         public class iParam
         {
+            /// Внутренние параметры для альтернативной постраничной навигации
             public iGetParamNavParams NAV_PARAMS { get; set; }
         }
 
+        /// Внутренние параметры для альтернативной постраничной навигации
         public class iGetParamNavParams
         {
-
+            /// колличество элементов на странице. В целях ограничения нагрузки на постраничную навигацию наложено ограничение в 50 записей
             [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-            public int? nPageSize { get; set; }  // колличество элементов на странице. В целях ограничения нагрузки на постраничную навигацию наложено ограничение в 50 записей.
+            public int? nPageSize { get; set; }
 
+            /// номер страницы при постраничной навигации.
             [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-            public int? iNumPage { get; set; } //  номер страницы при постраничной навигации.
+            public int? iNumPage { get; set; } 
         }
 
+        /// Представление битрикса о true и false 
         public enum iBXRestYesNo
         {
+            /// true
             Y = 'Y',
+            /// false
             N = 'N'
         }
 
+        /// Направление сортировки
         public enum iBXRestOrder
         {
+            /// по возрастанию
             [Description("asc")]
             Asc,
+
+            /// по убыванию
             [Description("desc")]
             Desc
         }
 
+        /// достает Description у Enum если он у него есть
         public static string GetDescriptionEnum(this Enum value)
         {
             FieldInfo field = value.GetType().GetField(value.ToString());
+            if (field == null) return value.ToString();
             DescriptionAttribute attribute = field.GetCustomAttribute<DescriptionAttribute>();
             return attribute != null ? attribute.Description : value.ToString();
         }

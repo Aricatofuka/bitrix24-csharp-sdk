@@ -24,9 +24,9 @@ namespace BXRest.Api.TasksMetodts
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
-        public async Task<iGetRespnse<iTask>> Add(iAdd param)
+        public async Task<iBXRespnse<iTask>> Add(iAdd param)
         {
-            return await client.SendPostRequest<iAdd, iGetRespnse<iTask>>(RestMedots.Tasks.Task.Add, param);
+            return await client.SendPostRequest<iAdd, iBXRespnse<iTask>>(RestMedots.Tasks.Task.Add, param);
         }
 
         /*
@@ -47,9 +47,9 @@ namespace BXRest.Api.TasksMetodts
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
-        public async Task<iGetRespnse<iGetResult>> Get(iGet param)
+        public async Task<iBXRespnse<iGetResult>> Get(iGet param)
         {
-            return await client.SendPostRequest<iGet, iGetRespnse<iGetResult>>(RestMedots.Tasks.Task.Get, param);
+            return await client.SendPostRequest<iGet, iBXRespnse<iGetResult>>(RestMedots.Tasks.Task.Get, param);
         }
         /*
         tasks.task.getFields Возвращает все доступные поля
@@ -62,9 +62,9 @@ namespace BXRest.Api.TasksMetodts
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
-        public async Task<iGetRespnse<iListResult>> List(iList param)
+        public async Task<iBXRespnse<iListResult>> List(iList param)
         {
-            return await client.SendPostRequest<iList, iGetRespnse<iListResult>>(RestMedots.Tasks.Task.List, param);
+            return await client.SendPostRequest<iList, iBXRespnse<iListResult>>(RestMedots.Tasks.Task.List, param);
         }
         /*
         tasks.task.list Возвращает массив задач, каждая из которых содержит массив полей

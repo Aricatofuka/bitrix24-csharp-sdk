@@ -6,7 +6,6 @@ using System;
 using static BXRest.Api.Models.Base;
 using BXRest.Models.Tasks.Task;
 using Flurl.Http;
-using Newtonsoft.Json;
 using Flurl.Http.Newtonsoft;
 
 namespace BXRest
@@ -62,10 +61,10 @@ namespace BXRest
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <typeparam name="R"></typeparam>
-        /// <param name="fan"></param>
+        /// <param name="fan"></param>  
         /// <param name="param"></param>
         /// <returns></returns>
-        public async Task<List<R>> getAll<T, R>(Func<T, Task<iGetRespnse<List<R>>>> fan, T param) where T : iBXRestBaseParam
+        public async Task<List<R>> getAll<T, R>(Func<T, Task<iBXRespnse<List<R>>>> fan, T param) where T : iBXRestBaseParam
         {
             var respon = await fan(param);
 
@@ -89,7 +88,7 @@ namespace BXRest
         /// <param name="fan"></param>
         /// <param name="param"></param>
         /// <returns></returns>
-        public async Task<List<iTask>> getAll<T>(Func<T, Task<iGetRespnse<iListResult>>> fan, T param) where T : iBXRestBaseParam
+        public async Task<List<iTask>> getAll<T>(Func<T, Task<iBXRespnse<iListResult>>> fan, T param) where T : iBXRestBaseParam
         {
             var respon = await fan(param);
 
@@ -118,7 +117,7 @@ namespace BXRest
         /// <param name="fan"></param>
         /// <param name="param"></param>
         /// <returns></returns>
-        public async Task<List<R>> getAllAlternative<T, R>(Func<T, Task<iGetRespnse<List<R>>>> fan, T param) where T : iBXRestBaseParamAlternative
+        public async Task<List<R>> getAllAlternative<T, R>(Func<T, Task<iBXRespnse<List<R>>>> fan, T param) where T : iBXRestBaseParamAlternative
         {
             var respon = await fan(param);
 

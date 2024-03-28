@@ -10,16 +10,21 @@ namespace BXRest.Converter
         /// Вывод при чтении json
         public override bool ReadJson(JsonReader reader, Type objectType, [AllowNull] bool existingValue, bool hasExistingValue, JsonSerializer serializer)
         {
-            string boolValue = reader.Value?.ToString().ToLower();
-            if (boolValue.Equals("true") || boolValue.Equals("yes") || boolValue.Equals("y") || boolValue.Equals("1"))
+            string strJson = reader.Value?.ToString();
+            if (strJson != null)
             {
-                return true;
+                strJson = strJson.Trim().ToLower();
+
+                if (strJson.Equals("true") || strJson.Equals("yes") || strJson.Equals("y") || strJson.Equals("1"))
+                {
+                    return true;
+                }
+                if (strJson.Equals("false") || strJson.Equals("no") || strJson.Equals("n") || strJson.Equals("0"))
+                {
+                    return false;
+                }
             }
-            if (boolValue.Equals("false") || boolValue.Equals("no") || boolValue.Equals("n") || boolValue.Equals("0"))
-            {
-                return false;
-            }
-            throw new JsonException($"{reader.Path}:{boolValue}, Invalid Boolean.");
+            throw new JsonException($"{reader.Path}:{strJson}, Invalid Boolean.");
         }
 
         /// Вывод при запись в json

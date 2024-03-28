@@ -29,9 +29,9 @@ namespace BXRest.Api.TaskMetodts.ItemMetodts
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
-        public async Task<iGetRespnse<List<iUserfield>>> GetList(iGetList param)
+        public async Task<iBXRespnse<List<iUserfield>>> GetList(iGetList param)
         {
-            return await client.SendPostRequest<iGetList, iGetRespnse<List<iUserfield>>>(RestMedots.Task.Item.Userfield.GetList, param);
+            return await client.SendPostRequest<iGetList, iBXRespnse<List<iUserfield>>>(RestMedots.Task.Item.Userfield.GetList, param);
         }
 
 
@@ -40,9 +40,9 @@ namespace BXRest.Api.TaskMetodts.ItemMetodts
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
-        public async Task<iGetRespnse<iUserfieldWhenGetOne>> Get(iGet param)
+        public async Task<iBXRespnse<iUserfieldWhenGetOne>> Get(iGet param)
         {
-            return await client.SendPostRequest<iGet, iGetRespnse<iUserfieldWhenGetOne>>(RestMedots.Task.Item.Userfield.Get, param);
+            return await client.SendPostRequest<iGet, iBXRespnse<iUserfieldWhenGetOne>>(RestMedots.Task.Item.Userfield.Get, param);
         }
 
     }

@@ -20,9 +20,9 @@ namespace BXRest.Api
         }
 
         /// Получение фильтрованного списка подразделений
-        public async Task<iGetRespnse<List<iGetItem>>> Get(iGetParam param)
+        public async Task<iBXRespnse<List<iGetItem>>> Get(iGetParam param)
         {
-            return await client.SendPostRequest<iGetParam, iGetRespnse<List<iGetItem>>>(RestMedots.Department.Get, param);
+            return await client.SendPostRequest<iGetParam, iBXRespnse<List<iGetItem>>>(RestMedots.Department.Get, param);
         }
 
     }

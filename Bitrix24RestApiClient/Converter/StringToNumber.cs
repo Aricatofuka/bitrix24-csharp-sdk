@@ -13,10 +13,15 @@ namespace BXRest.Converter
         {
             if (reader.Value == null)
             {
-                return default(T);
+                return default;
             }
 
             var strValue = reader.Value.ToString();
+
+            if (strValue == null)
+            {
+                return default;
+            }
 
             if (typeof(T) == typeof(int))
                 return (T)(object)int.Parse(strValue);
@@ -43,7 +48,7 @@ namespace BXRest.Converter
                 return (T)TypeDescriptor.GetConverter(typeof(T)).ConvertFromString(strValue);
             }
 
-            return default(T);
+            return default;
         }
 
         /// запись json

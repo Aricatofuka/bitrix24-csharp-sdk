@@ -21,57 +21,105 @@ namespace BXRest.Models.Tasks.Task
     {
         /// выборка всех полей
         [EnumMember(Value = "*")]
-        all, 
-        ID, // идентификатор задачи
-        PARENT_ID, // идентификатор родительской задачи
-        TITLE, // название задачи
-        DESCRIPTION, // описание
-        MARK, // оценка
-        PRIORITY, // приоритет: 0 - низкий, 1 - средний, 2 - высокий
-        STATUS, // статус
-        MULTITASK, // множественная задача
-        NOT_VIEWED, // непросмотренная задача
-        REPLICATE, //  повторяемая задача
-        GROUP_ID,  // рабочая группа.
-        STAGE_ID, // стадия
-        CREATED_BY, // постановщик
-        CREATED_DATE, // дата создания
-        RESPONSIBLE_ID, // исполнитель
-        ACCOMPLICES, // идентификатор соисполнителя
-        AUDITORS, // идентификатор аудитора
-        CHANGED_BY, // кем изменена задача
-        CHANGED_DATE, // дата изменения
-        STATUS_CHANGED_DATE, // кто изменил статус
-        CLOSED_BY, // кто закрыл задачу
-        CLOSED_DATE, // дата закрытия задачи
-        DATE_START, // дата начала
-        DEADLINE, // крайний срок
-        START_DATE_PLAN, // плановое начало
-        END_DATE_PLAN, // плановое завершение
-        GUID, // GUID (статистически уникальный 128-битный идентификатор)
-        XML_ID, // внешний код
-        COMMENTS_COUNT, // количество комментариев
-        NEW_COMMENTS_COUNT, // количество новых комментариев
-        TASK_CONTROL, // принять в работу
-        ADD_IN_REPORT, // добавить в отчет
-        FORKED_BY_TEMPLATE_ID, // создано из шаблона
-        TIME_ESTIMATE, // затраченное время
-        TIME_SPENT_IN_LOGS, // затраченное время из истории изменений
-        MATCH_WORK_TIME, // пропустить выходные дни
-        FORUM_TOPIC_ID, // идентификатор темы форума
-        FORUM_ID, // идентификатор форума
-        SITE_ID, // идентификатор сайта
-        SUBORDINATE, // задача подчиненного
-        FAVORITE, // Избранное
-        VIEWED_DATE, // дата последнего просмотра
-        SORTING, // индекс сортировки
-        DURATION_PLAN, // затрачено (план)
-        DURATION_FACT, // затрачено (фактически)
-        DURATION_TYPE, // тип единицы измерения в планируемой длительности: days, hours или minutes
+        all,
+        /// идентификатор задачи
+        ID,
+        /// идентификатор родительской задачи
+        PARENT_ID,
+        /// название задачи
+        TITLE,
+        /// описание
+        DESCRIPTION,
+        /// оценка
+        MARK,
+        /// приоритет: 0 - низкий, 1 - средний, 2 - высокий
+        PRIORITY,
+        /// статус
+        STATUS,
+        /// множественная задача
+        MULTITASK,
+        /// непросмотренная задача
+        NOT_VIEWED,
+        /// повторяемая задача
+        REPLICATE,
+        /// рабочая группа.
+        GROUP_ID,
+        /// стадия
+        STAGE_ID,
+        /// постановщик
+        CREATED_BY,
+        /// дата создания
+        CREATED_DATE,
+        /// исполнитель
+        RESPONSIBLE_ID,
+        /// идентификатор соисполнителя
+        ACCOMPLICES,
+        /// идентификатор аудитора
+        AUDITORS,
+        /// кем изменена задача
+        CHANGED_BY,
+        /// дата изменения
+        CHANGED_DATE,
+        /// кто изменил статус
+        STATUS_CHANGED_DATE,
+        /// кто закрыл задачу
+        CLOSED_BY,
+        /// дата закрытия задачи
+        CLOSED_DATE,
+        /// дата начала
+        DATE_START,
+        /// крайний срок
+        DEADLINE,
+        /// плановое начало
+        START_DATE_PLAN,
+        /// плановое завершение
+        END_DATE_PLAN,
+        /// GUID (статистически уникальный 128-битный идентификатор)
+        GUID,
+        /// внешний код
+        XML_ID,
+        /// количество комментариев
+        COMMENTS_COUNT,
+        /// количество новых комментариев
+        NEW_COMMENTS_COUNT,
+        /// принять в работу
+        TASK_CONTROL,
+        /// добавить в отчет
+        ADD_IN_REPORT,
+        /// создано из шаблона
+        FORKED_BY_TEMPLATE_ID,
+        /// затраченное время
+        TIME_ESTIMATE,
+        /// затраченное время из истории изменений
+        TIME_SPENT_IN_LOGS,
+        /// пропустить выходные дни
+        MATCH_WORK_TIME,
+        /// идентификатор темы форума
+        FORUM_TOPIC_ID,
+        /// идентификатор форума
+        FORUM_ID,
+        /// идентификатор сайта
+        SITE_ID,
+        /// задача подчиненного
+        SUBORDINATE,
+        /// Избранное
+        FAVORITE,
+        /// дата последнего просмотра
+        VIEWED_DATE,
+        /// индекс сортировки
+        SORTING,
+        /// затрачено (план)
+        DURATION_PLAN,
+        /// затрачено (фактически)
+        DURATION_FACT,
+        /// тип единицы измерения в планируемой длительности: days, hours или minutes
+        DURATION_TYPE, 
         ACTIVITY_DATE,
         TAGS,
-        ALLOW_TIME_TRACKING, // разрешён трек времени
-        UF_AUTO_957927659722, // сложность
+        /// разрешён трек времени
+        ALLOW_TIME_TRACKING,
+        /// сложность
+        UF_AUTO_957927659722, 
     }
 
     public class iGetResult

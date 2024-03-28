@@ -26,11 +26,12 @@ namespace BXRest.Converter
 
             try
             {
-                return  (Dictionary<K, T>)JsonConvert.DeserializeObject(reader.Value?.ToString());
+                string val = reader.Value?.ToString();
+                return (Dictionary<K, T>)JsonConvert.DeserializeObject((val != null && val.Length != 0) ? val : "");
             } 
             catch 
             {
-                return new Dictionary<K, T>();
+                return [];
             }
        
         }

@@ -44,7 +44,6 @@ namespace BXRest.Models.User
         public string? USER_TYPE { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-       // [JsonConverter(typeof(YesNoBX))]
         public bool? ACTIVE { get; set; }
     }
 }

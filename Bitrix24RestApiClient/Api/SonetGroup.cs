@@ -17,9 +17,9 @@ namespace BXRest.Api
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
-        public async Task<iGetRespnse<List<iGroup>>> Get(iGet param)
+        public async Task<iBXRespnse<List<iGroup>>> Get(iGet param)
         {
-            return await client.SendPostRequest<iGet, iGetRespnse<List<iGroup>>>(RestMedots.SonetGroup.Get, param);
+            return await client.SendPostRequest<iGet, iBXRespnse<List<iGroup>>>(RestMedots.SonetGroup.Get, param);
         }
     }
 }
