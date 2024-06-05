@@ -1,6 +1,4 @@
-﻿using Newtonsoft.Json;
-
-namespace BXRest.Models.Tasks.Task
+﻿namespace BXRest.Models.Tasks.Task
 {
     public class iPeople
     {

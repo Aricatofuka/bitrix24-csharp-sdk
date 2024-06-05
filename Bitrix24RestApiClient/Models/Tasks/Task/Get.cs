@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿#nullable enable
+using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
@@ -11,11 +12,12 @@ namespace BXRest.Models.Tasks.Task
         /// идификатор задачи
         public int taskId { get; set; }
 
+        /// Список полей для выдачи (динамическая выдача полей)
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public List<iBXRestTaskFieldsName>? select { get; set; }
     }
 
-
+    /// Название полей
     [JsonConverter(typeof(StringEnumConverter))]
     public enum iBXRestTaskFieldsName
     {
@@ -114,7 +116,9 @@ namespace BXRest.Models.Tasks.Task
         DURATION_FACT,
         /// тип единицы измерения в планируемой длительности: days, hours или minutes
         DURATION_TYPE, 
+        /// Дата активности
         ACTIVITY_DATE,
+        /// Теги
         TAGS,
         /// разрешён трек времени
         ALLOW_TIME_TRACKING,
@@ -122,8 +126,10 @@ namespace BXRest.Models.Tasks.Task
         UF_AUTO_957927659722, 
     }
 
+    /// Так задачи в Result пихаються
     public class iGetResult
     {
+        /// Так задачи в Result пихаються
         public iTask task { get; set; }
         
     }

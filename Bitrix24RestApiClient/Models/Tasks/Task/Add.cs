@@ -156,9 +156,12 @@ namespace BXRest.Models.Tasks.Task
         public string[] UFTASKWEBDAVFILES { get; set; }
     }
 
+    /// Список ['Да','Нет'] для булевой связи с битрисом
     public enum iBXRestYesNo
     {
+        /// Да
         Yes,
+        /// Нет
         No
     }
 }
