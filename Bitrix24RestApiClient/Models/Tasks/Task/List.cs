@@ -1,4 +1,5 @@
 ﻿using BXRest.Converter;
+#nullable enable
 using Newtonsoft.Json;
 using static BXRest.Api.Models.Base;
 using static BXRest.Models.Parameter.Request.Filter;

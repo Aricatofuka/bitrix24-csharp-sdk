@@ -14,8 +14,9 @@ namespace BXRest.Core.Models.Response.BatchResponse
             get {
                 string str = JsonConvert.SerializeObject(ResultExt);
                 if (str == "[]")
+                {
                     return [];
-
+                }
                 return JsonConvert.DeserializeObject<Dictionary<string, TCmdResultItem>>(str);
             }
         }
@@ -31,8 +32,9 @@ namespace BXRest.Core.Models.Response.BatchResponse
             {
                 string str = JsonConvert.SerializeObject(ErrorExt);
                 if (str == "[]")
+                {
                     return [];
-
+                }
                 return JsonConvert.DeserializeObject<Dictionary<string, BatchResponseResultError>>(str);
             }
         }
@@ -49,8 +51,9 @@ namespace BXRest.Core.Models.Response.BatchResponse
             {
                 string str = JsonConvert.SerializeObject(TotalExt);
                 if (str == "[]")
-                    return new Dictionary<string, int>();
-
+                {
+                    return [];
+                }
                 return JsonConvert.DeserializeObject<Dictionary<string, int>>(str);
             }
         }
@@ -66,8 +69,9 @@ namespace BXRest.Core.Models.Response.BatchResponse
             {
                 string str = JsonConvert.SerializeObject(NextExt);
                 if (str == "[]")
+                {
                     return [];
-
+                }
                 return JsonConvert.DeserializeObject<Dictionary<string, int>>(str);
             }
         }
@@ -84,8 +88,9 @@ namespace BXRest.Core.Models.Response.BatchResponse
             {
                 string str = JsonConvert.SerializeObject(TimeExt);
                 if (str == "[]")
+                {
                     return [];
-
+                }
                 return JsonConvert.DeserializeObject<Dictionary<string, Time>>(str);
             }
         }

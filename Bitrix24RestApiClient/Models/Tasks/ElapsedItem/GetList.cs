@@ -1,4 +1,5 @@
-﻿using BXRest.Converter;
+﻿#nullable enable
+using BXRest.Converter;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,7 @@ namespace BXRest.Api.Models.Tasks.ElapsedItem
 
         /// Выбр выгружаемых полей задач ("*" - все поля, стоит по уумолчанию) 
         /// + если нужны все с кастомными то надо писать - "*" и хотябы одно кастовое поле
-        public List<string>? SELECT { get; set; } = new List<string>() { "*" };
+        public List<string>? SELECT { get; set; } = ["*"];
     }
 
     /*

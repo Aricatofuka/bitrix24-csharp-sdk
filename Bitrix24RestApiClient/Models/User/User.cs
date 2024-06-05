@@ -1,5 +1,4 @@
-using BXRest.Converter;
-using Newtonsoft.Json;
+#nullable enable
 using System;
 using System.Collections.Generic;
 

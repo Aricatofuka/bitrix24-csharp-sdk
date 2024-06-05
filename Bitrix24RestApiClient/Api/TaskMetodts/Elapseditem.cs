@@ -9,19 +9,14 @@ using System.Threading.Tasks;
 namespace BXRest.Api.TaskMetodts
 {
     /// Набор запросов для работы с записами к задачам
-    public class ElapsedItem
+    /// <summary>
+    /// init
+    /// </summary>
+    /// <param name="client"></param>
+    public class ElapsedItem(IBitrix24Client client)
     {
 
-        private IBitrix24Client client;
-
-        /// <summary>
-        /// init
-        /// </summary>
-        /// <param name="client"></param>
-        public ElapsedItem(IBitrix24Client client)
-        {
-            this.client = client;
-        }
+        private readonly IBitrix24Client client = client;
 
         /// <summary>
         /// Получение списка зписей о треках в задачу
