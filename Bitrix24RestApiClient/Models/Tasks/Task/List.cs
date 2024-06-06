@@ -26,18 +26,16 @@ namespace BXRest.Models.Tasks.Task
         public List<iBXRestTaskFieldsName>? select { get; set; }
     }
 
-
+    /// Так выглядит ответ на запрос на список задач/задачи
     public class iListResult
     {
-
         /// Список задач
-        public List<iTask> tasks { get; set; }
-
+        public List<iTask> tasks { get; set; } = [];
     }
 
+    /// Фильтр сортировки
     public class iListOrder
     {
-
         /// Сортировать по идентификатору задачи
         public iBXRestOrder? ID { get; set; }
 

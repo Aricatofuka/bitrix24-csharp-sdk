@@ -230,12 +230,12 @@
             /// Старый но еще использемый раздел задач
             public static class Task
             {
-                private static string Base = "task.";
+                private static readonly string Base = "task.";
 
                 /// Раздел затраченого времени на задачу
                 public static class ElapsedItem
                 {
-                    private static string Base = "task.elapseditem.";
+                    private static readonly string Base = "task.elapseditem.";
 
                     /// Возвращает список методов и их описание
                     public static readonly string GetManIFest = Base + "getmanifest";
@@ -262,12 +262,12 @@
                 /// Старый раздел задач
                 public static class Item
                 {
-                    private static string Base = "task.item.";
+                    private static readonly string Base = "task.item.";
 
                     /// Раздел с пользовательскими полями по задачам
                     public static class Userfield
                     {
-                        private static string Base = "task.item.userfield.";
+                        private static readonly string Base = "task.item.userfield.";
 
                         /// Получение всех доступных полей свойства
                         public static readonly string GetFields = Base + "getfields";
@@ -301,8 +301,7 @@
                 /// Раздел задач
                 public static class Task
                 {
-                    private static string Base = "tasks.task.";
-
+                    private static readonly string Base = "tasks.task.";
 
                     /// Создает задачу.
                     public static readonly string Add = Base + "add";
@@ -335,7 +334,7 @@
                     /// Раздел задача помеченных "лайком"
                     public static class Favorite
                     {
-                        private static string Base = "tasks.task.favorite";
+                        private static readonly string Base = "tasks.task.favorite";
 
                         /// Добавляет задачи в "Избранное"
                         public static readonly string Add = Base + "add";
@@ -348,7 +347,7 @@
                     /// Раздел файлов прикрепленных к задаче
                     public static class Files
                     {
-                        private static string Base = "tasks.task.favorite";
+                        private static readonly string Base = "tasks.task.favorite";
 
                         /// Добавляет задачи в "Избранное"
                         public static readonly string Add = Base + "add";
@@ -404,7 +403,7 @@
             /// Пространство имен "Рабочие группы соцсети"
             public static class SonetGroup
             {
-                private static string Base = "sonet_group.";
+                private static readonly string Base = "sonet_group.";
 
 
                 /// Создает группу соцсети, используя метод API CSocNetGroup::CreateGroup(), указывая владельцем группы текущего пользователя
@@ -442,7 +441,7 @@
                 /// под пространство "sonet_group.user."
                 public static class User
                 {
-                    private static string Base = "sonet_group.user.";
+                    private static readonly string Base = "sonet_group.user.";
 
                     /// Добавляет пользователей в качестве участников рабочей группы (без приглашения и подтверждения)
                     public static readonly string Add = Base + "add";
