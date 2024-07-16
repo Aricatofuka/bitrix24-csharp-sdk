@@ -35,7 +35,7 @@ namespace BXRest.Models.User
 
         /// Индификаторы подразделений
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public List<int>? UF_DEPARTMENT { get; set; }
+        public List<uint>? UF_DEPARTMENT { get; set; }
 
         /// Номер телефона
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
