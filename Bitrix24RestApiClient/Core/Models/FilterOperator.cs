@@ -8,11 +8,11 @@
         /// Оператор 'Равно'
         Equal,
         /// Оператор 'Больше чем'
-        GreateThan,
+        GreatThan,
         /// Оператор 'Меньше чем'
         LessThan,
         /// Оператор 'Больше или равно'
-        GreateThanOrEqual,
+        GreatThanOrEqual,
         /// Оператор 'Меньше или равно'
         LessThanOrEqual,
         /// Оператор 'Содержится в массиве'

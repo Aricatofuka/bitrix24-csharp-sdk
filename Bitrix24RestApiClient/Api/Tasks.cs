@@ -2,14 +2,10 @@
 
 namespace BXRest.Api
 {
-    public class Tasks
+    /// https://dev.1c-bitrix.ru/rest_help/tasks/task/tasks/index.php
+    public class Tasks(IBitrix24Client client)
     {
-        private IBitrix24Client client;
-        public TasksMetodts.Task Task { get; set; }
-        public Tasks(IBitrix24Client client)
-        {
-            this.client = client;
-            Task = new TasksMetodts.Task(client);
-        }
+        /// tasks.task
+        public TasksMethods.Task Task { get; set; } = new TasksMethods.Task(client);
     }
 }

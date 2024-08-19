@@ -21,10 +21,11 @@ namespace BXRest.Core.Models.Response.BatchResponse
             }
         }
 
+        /// Результат
         [JsonProperty("result")]
         public object ResultExt { get; set; }
 
-        /// Массив ошимбок
+        /// Массив ошибок
         [JsonIgnore]
         public Dictionary<string, BatchResponseResultError> Error
         {
@@ -43,7 +44,7 @@ namespace BXRest.Core.Models.Response.BatchResponse
         [JsonProperty("result_error")]
         public object ErrorExt { get; set; }
 
-        /// Потсчет всех возможных элементов для ответа для каждого метода
+        /// Подсчёт всех возможных элементов для ответа для каждого метода
         [JsonIgnore]
         public Dictionary<string, int> Total
         {
@@ -58,10 +59,11 @@ namespace BXRest.Core.Models.Response.BatchResponse
             }
         }
 
-        //TODO неизвестный формат
+        /// Каким должен быть конечный результат, его количество
         [JsonProperty("result_total")]
         public object TotalExt { get; set; }
 
+        /// Следующий номер с которого начинать забор массива ответов
         [JsonIgnore]
         public Dictionary<string, int> Next
         {
@@ -76,7 +78,7 @@ namespace BXRest.Core.Models.Response.BatchResponse
             }
         }
 
-        //TODO неизвестный формат
+        /// Следующий номер с которого начинать забор массива ответов
         [JsonProperty("result_next")]
         public object NextExt { get; set; }
 
@@ -94,7 +96,7 @@ namespace BXRest.Core.Models.Response.BatchResponse
                 return JsonConvert.DeserializeObject<Dictionary<string, Time>>(str);
             }
         }
-
+        /// Время выполнения запроса
         [JsonProperty("result_time")]
         public object TimeExt { get; set; }
     }

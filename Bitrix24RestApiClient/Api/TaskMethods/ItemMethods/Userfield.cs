@@ -6,26 +6,18 @@ using System.Threading.Tasks;
 using BXRest.Models.Task.Item;
 using BXRest.Models.Task.Item.Userfield;
 
-namespace BXRest.Api.TaskMetodts.ItemMetodts
+namespace BXRest.Api.TaskMethods.ItemMethods
 {
     /// <summary>
-    /// Класс для работы с пользоватльскими полями задач из битрикса
+    /// Класс для работы с пользовательскими полями задач из битрикса
     /// </summary>
-    public class Userfield
+    /// <param name="client"></param>
+    public class UserField(IBitrix24Client client)
     {
-        private IBitrix24Client client;
+        private IBitrix24Client client = client;
 
         /// <summary>
-        /// init
-        /// </summary>
-        /// <param name="client"></param>
-        public Userfield(IBitrix24Client client)
-        {
-            this.client = client;
-        }
-
-        /// <summary>
-        /// Получение списка зписей о треках в задачу
+        /// Получение списка записей о треках в задачу
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
@@ -36,7 +28,7 @@ namespace BXRest.Api.TaskMetodts.ItemMetodts
 
 
         /// <summary>
-        /// Получение списка зписей о треках в задачу
+        /// Получение списка записей о треках в задачу
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>

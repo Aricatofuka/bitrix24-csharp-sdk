@@ -3,10 +3,10 @@ using System;
 
 namespace BXRest.Models.Tasks.ElapsedItem
 {
-    /// Элемент списока треков по задачам
+    /// Элемент списка треков по задачам
     public class iElapsedItem
     {
-        /// Уникальный индификатор
+        /// Уникальный идентификатор
         public uint ID { get; set; }
 
         /// Минуты
@@ -15,13 +15,13 @@ namespace BXRest.Models.Tasks.ElapsedItem
         /// Секунды
         public int SECONDS { get; set; }
 
-        /// Индификатор задачи
+        /// Идентификатор задачи
         public uint TASK_ID { get; set; }
 
         /// Текст комментария
         public string COMMENT_TEXT { get; set; }
 
-        /// Индификатор задачи
+        /// Идентификатор задачи
         public uint USER_ID { get; set; }
         public int SOURCE { get; set; }
 

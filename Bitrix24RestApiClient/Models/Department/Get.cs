@@ -1,7 +1,6 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿#nullable enable
+using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Xml.Linq;
 using static BXRest.Api.Models.Base;
 
 namespace BXRest.Models.Department

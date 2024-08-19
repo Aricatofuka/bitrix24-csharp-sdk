@@ -9,8 +9,8 @@ namespace BXRest.Api
     public class Task(IBitrix24Client client)
     {
         /// Свойство для работы с затраченным временем по задачам
-        public TaskMetodts.ElapsedItem ElapsedItem { get; set; } = new TaskMetodts.ElapsedItem(client);
+        public TaskMethods.ElapsedItem ElapsedItem { get; set; } = new TaskMethods.ElapsedItem(client);
         /// Свойство для работы с затраченным временем по задачам
-        public TaskMetodts.Item Item { get; set; } = new TaskMetodts.Item(client);
+        public TaskMethods.Item Item { get; set; } = new TaskMethods.Item(client);
     }
 }

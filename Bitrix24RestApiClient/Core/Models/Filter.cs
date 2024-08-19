@@ -28,11 +28,11 @@ namespace BXRest.Core.Models
             {
                 switch (Operator)
                 {
-                    case FilterOperator.GreateThan:
+                    case FilterOperator.GreatThan:
                         return ">";
                     case FilterOperator.LessThan:
                         return "<";
-                    case FilterOperator.GreateThanOrEqual:
+                    case FilterOperator.GreatThanOrEqual:
                         return ">=";
                     case FilterOperator.LessThanOrEqual:
                         return "<=";

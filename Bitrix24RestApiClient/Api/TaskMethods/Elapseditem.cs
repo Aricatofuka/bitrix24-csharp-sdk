@@ -6,7 +6,7 @@ using BXRest.Models.Tasks.ElapsedItem;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace BXRest.Api.TaskMetodts
+namespace BXRest.Api.TaskMethods
 {
     /// Набор запросов для работы с записами к задачам
     /// <summary>

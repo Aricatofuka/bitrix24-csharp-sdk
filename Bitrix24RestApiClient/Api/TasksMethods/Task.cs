@@ -4,21 +4,11 @@ using BXRest.Core.Models.Response;
 using BXRest.Models.Tasks.Task;
 using System.Threading.Tasks;
 
-namespace BXRest.Api.TasksMetodts
+namespace BXRest.Api.TasksMethods
 {
-    /// <summary>
     /// https://dev.1c-bitrix.ru/rest_help/tasks/task/tasks/index.php
-    /// </summary>
-    public class Task
+    public class Task(IBitrix24Client client)
     {
-
-        private IBitrix24Client client;
-
-        public Task(IBitrix24Client client)
-        {
-            this.client = client;
-        }
-
         /// <summary>
         /// Создает задачу
         /// </summary>
