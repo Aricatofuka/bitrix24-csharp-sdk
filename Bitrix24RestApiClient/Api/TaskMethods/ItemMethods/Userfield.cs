@@ -14,8 +14,6 @@ namespace BXRest.Api.TaskMethods.ItemMethods
     /// <param name="client"></param>
     public class UserField(IBitrix24Client client)
     {
-        private IBitrix24Client client = client;
-
         /// <summary>
         /// Получение списка записей о треках в задачу
         /// </summary>

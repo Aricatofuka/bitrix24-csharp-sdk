@@ -1,6 +1,8 @@
 #nullable enable
+using BXRest.Converter;
 using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace BXRest.Models.User
 {
@@ -8,7 +10,7 @@ namespace BXRest.Models.User
     public class iUser
     {
         /// ID
-        /// [JsonConverter(typeof(StringToNumberConverter<uint>))]
+        [JsonConverter(typeof(StringToNumberConverter<uint>))]
         public uint ID { get; set; }
         
         /// Активность

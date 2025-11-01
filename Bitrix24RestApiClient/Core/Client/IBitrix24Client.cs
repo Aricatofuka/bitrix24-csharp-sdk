@@ -6,6 +6,6 @@ namespace BXRest.Core.Client
     public interface IBitrix24Client
     {
         /// Интерфейс конечного запроса
-        Task<TResponse> SendPostRequest<TArgs, TResponse>(string metod, TArgs args) where TResponse : class;
+        Task<TResponse> SendPostRequest<TArgs, TResponse>(string method, TArgs args) where TResponse : class;
     }
 }
